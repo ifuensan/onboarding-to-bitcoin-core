@@ -1,37 +1,37 @@
-:page-title: Contributing code
+:page-title: Contribución de código
 :page-nav_order: 30
-:page-parent: Overview and Development Process
-=== Contributing code
+:page-parent: Descripción general y proceso de desarrollo
+=== Contribución de código
 
-This section details some of the processes surrounding code contributions to the Bitcoin Core project along with some common pitfalls and tips to try and avoid them.
+Esta sección detalla algunos de los procesos relacionados con las contribuciones de código al proyecto Bitcoin Core, junto con algunos escollos comunes y consejos para tratar de evitarlos.
 
-==== Branches
+==== Ramas
 
-You should *not* use the built-in GitHub branch https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository[creation^] process, as this interferes with and confuses the Bitcoin Core git process.
+No debes usar la rama incorporada de GitHub https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository[para crear ramas y eliminarlas^].
 
-Instead, you should use either the native https://git-scm.com/downloads[`git`^] or the GitHub https://github.com/cli/cli[`gh` cli^] (requires `git`) tools to create your own branches locally, before pushing them to your fork of the repo, and opening a PR against the Bitcoin Core repo from there.
+En su lugar, debes usar las herramientas nativas https://git-scm.com/downloads[`git`^] o el https://github.com/cli/cli[`gh` cli^] de GitHub (requiere `git`) para crear tus propias ramas localmente, antes de subirlas a tu fork.
 
-==== Creating a PR
+==== Creación de una PR
 
-Jon Atack's article https://jonatack.github.io/articles/how-to-contribute-pull-requests-to-bitcoin-core[How To Contribute Pull Requests To Bitcoin Core^] describes some less-obvious requirements that any PR you make might be subjected to during peer review, for example that it needs an accompanying test, or that an intermediate commit on the branch doesn't compile.
-It also describes the uncodified expectation that Contributors should not only be writing code, but perhaps more importantly be providing reviews on other Contributors' PRs.
-Most developers enjoy writing their own code more than reviewing code from others, but the decentralized review process is arguably the most critical defence Bitcoin development has against malicious actors and therefore important to try and uphold.
+El artículo de Jon Atack https://jonatack.github.io/articles/how-to-contribute-pull-requests-to-bitcoin-core[How To Contribute Pull Requests To Bitcoin Core^] describe algunos requisitos menos obvios para abrir una PR.
+También describe la expectativa no codificada de que los Contribuidores no solo deberían estar escribiendo código, sino quizás más importante, proporcionando revisiones sobre los PRs de otros Contribuidores.
+A la mayoría de los desarrolladores les gusta escribir su propio código más que revisar el código de otros, pero el proceso de revisión descentralizado es posiblemente la defensa más crítica que tiene el desarrollo de Bitcoin contra cambios maliciosos.
 
-IMPORTANT: Jon's estimates of "5-15 PR reviews|issues solved" per PR submitted is not a hard requirement, just what Jon himself feels would be best for the project. Don't be put off submitting a potentially valuable PR just because "you haven't done enough reviews"!
+IMPORTANTE: Las estimaciones de Jon de "5-15 revisiones de PR|problemas resueltos" por PR presentado no son un requisito estricto, solo lo que Jon mismo considera mejor para el proyecto. No te desanimes por enviar una PR si no has revisado tantos PRs.
 
-For some tips on how to maintain an open PR using git, such as how to redo commit history, as well as edit specific commits, check out this https://github.com/satsie/bitcoin-notez/blob/master/bitcoin-core-development/git-guide.md[guide^].
+Para algunos consejos sobre cómo mantener un PR abierto usando git, como rehacer el historial de commits, así como editar commits específicos, consulta esta https://github.com/satsie/bitcoin-notez/blob/master/bitcoin-notez-PR.md[guía^].
 
-==== Commit messages
+==== Mensajes de commits
 
-When writing commit messages be sure to have read Chris Beams' "How to Write a Git Commit Message" https://chris.beams.io/posts/git-commit/[blog post^].
-As described in CONTRIBUTING.md, PRs should be prefixed with the component or area the PR affects.
-Common areas are listed in CONTRIBUTING.md section: https://github.com/bitcoin/bitcoin/tree/master/CONTRIBUTING.md#creating-the-pull-request[Creating the pull request^].
-Individual commit messages are also often given similar prefixes in the commit title depending on which area of the codebase the changes primarily affect.
+Cuando escribas mensajes de commits asegúrate de haber leído la publicación de blog de Chris Beams "Cómo Escribir un Mensaje de Commit de Git" https://chris.beams.io/posts/git-commit/[post^].
+Como se describe en CONTRIBUTING.md, los PRs deben estar prefijados con el componente o área que afecta el PR.
+Las áreas comunes están listadas en la sección CONTRIBUTING.md: https://github.com/bitcoin/bitcoin/tree/master/CONTRIBUTING.md#creating-the-pull-request[Creating the pull request^].
+Los mensajes de commits individuales también suelen tener prefijos similares en el título del commit dependiendo de qué área del código se ve principalmente afectada.
 
-[TIP]
+[CONSEJO]
 ====
-Unless there is a merge conflict (usually detected by DrahtBot), don't rebase your changes on master branch before pushing.
-If you avoid rebases on upstream, Github will show a very useful "Compare" button which reviewers can often use to quickly re-ACK the new changes if they are sufficiently small.
-If you _do_ rebase this button becomes useless, as all the rebased changes from master get included and so a full re-review may be needed.
-Developer review time is currently our major bottleneck in the project!
+A menos que haya un conflicto de fusión (generalmente detectado por DrahtBot), no rehagas el rebase de tus cambios en la rama master antes de hacer push.
+Si evitas los rebases en upstream, GitHub mostrará un botón de "Comparar" muy útil que los revisores pueden usar a menudo para volver a aprobar rápidamente los nuevos cambios si son lo suficientemente pequeños.
+Si haces rebase, este botón se vuelve inútil, ya que todos los cambios rehechos de master se incluyen y puede ser necesaria una revisión completa.
+¡El tiempo de revisión de los desarrolladores es actualmente nuestro principal cuello de botella en el proyecto!
 ====
