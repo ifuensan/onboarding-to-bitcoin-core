@@ -2,7 +2,7 @@
 
 TIP: Documento escrito originalmente por https://github.com/willcl-ark[Will Clark]. Ayude a mantener este documento: https://github.com/chaincodelabs/onboarding-to-bitcoin-core[https://github.com/chaincodelabs/onboarding-to-bitcoin-core~]
 
-TIP: This section has been updated to Bitcoin Core @ https://github.com/bitcoin/bitcoin/tree/v23.0[v23.0^]
+TIP: Esta sección ha sido actualizada para Bitcoin Core @ https://github.com/bitcoin/bitcoin/tree/v23.0[v23.0^]
 
 include::reading.adoc[]
 
