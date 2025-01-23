@@ -1,7 +1,7 @@
-:page-title: Contributor journeys
+:page-title: Viajes del contribuidor
 :page-nav_order: 0
 :page-parent: Overview and Development Process
-== Contributor journeys
+== Viajes del contribuidor
 
 Algunos colaboradores han documentado sus viajes al espacio, lo que nos permite conocer los enfoques que encontraron útiles, y también los obstáculos y las cosas que encontraron difíciles en el camino.
 
@@ -9,20 +9,20 @@ Algunos colaboradores han documentado sus viajes al espacio, lo que nos permite 
 * https://github.com/jonatack[Jon Atack^] - https://jonatack.github.io/articles/on-reviewing-and-helping-those-who-do-it[On Reviewing, and Helping Those Who Do It^]
 * https://github.com/jimmysong[Jimmy Song^] - https://medium.com/bitcoin-tech-talk/a-gentle-introduction-to-bitcoin-core-development-fdc95eaee6b8[A Gentle Introduction to Bitcoin Core Development^]
 
-== Decentralized development
+== Desarrollo descentralizado
 
-Olivia Lovenmark and Amiti Uttarwar describe in their https://blog.okcoin.com/2020/09/15/developing-bitcoin/[blog post^] "Developing Bitcoin", how changes to bitcoin follow the pathway from proposal to being merged into the software, and finally into voluntary adoption by users choosing to use the software.
+Olivia Lovenmark y Amiti Uttarwar describen en su https://blog.okcoin.com/2020/09/15/developing-bitcoin/[blog post~] "Developing Bitcoin", cómo los cambios en bitcoin siguen el camino desde la propuesta hasta la fusión. en el software y, finalmente, en la adopción voluntaria por parte de los usuarios que eligen utilizar el software.
 
-== Developer guidelines
+== Guías de desarrollo
 
-The Bitcoin Core project itself contains three documents of particular interest to Contributors:
+El proyecto Bitcoin Core en sí contiene tres documentos de particular interés para los Contribuidores:
 
-. https://github.com/bitcoin/bitcoin/tree/master/CONTRIBUTING.md[CONTRIBUTING.md^] -- How to get started contributing to the project.  (Forking, creating branches, commit patches)
-. https://github.com/bitcoin/bitcoin/tree/master/doc/developer-notes.md[developer-notes.md^] -- Development guidelines, coding style etc.
-. https://github.com/bitcoin/bitcoin/blob/master/doc/productivity.md[productivity.md^] -- Many tips for improving developer productivity (ccache, reviewing code, refspecs, git diffs)
-. https://github.com/bitcoin/bitcoin/blob/master/test/README.md[test/README.md] -- Guidance on running the test suite
+. https://github.com/bitcoin/bitcoin/tree/master/CONTRIBUTING.md[CONTRIBUTING.md^] -- Cómo empezar a contribuir al proyecto. (Bifurcar, crear ramas, `commitar` parches)
+. https://github.com/bitcoin/bitcoin/tree/master/doc/developer-notes.md[developer-notes.md^] -- Guías de desarrollo, estilos de programación, etc.
+. https://github.com/bitcoin/bitcoin/blob/master/doc/productivity.md[productivity.md^] -- Muchos consejos para mejorar la productividad de los desarrolladores (ccache, revisión de código, refspecs, git diffs)
+. https://github.com/bitcoin/bitcoin/blob/master/test/README.md[test/README.md] -- Orientación sobre cómo ejecutar el conjunto de pruebas
 
-TIP: Using `ccache` as described in _productivity.md_ above will speed up builds of Bitcoin Core dramatically.
+TIP: El uso de `ccache` como se describe en _productivity.md_ arriba acelerará drásticamente las compilaciones de Bitcoin Core.
 
-TIP: Setting up a ramdisk for the test suite as described in _test/README.md_ will speed up running the test suite dramatically.
+TIP: Configurar un disco ram para el conjunto de pruebas como se describe en _test/README.md_ acelerará drásticamente la ejecución del conjunto de pruebas.
 
