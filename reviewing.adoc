@@ -1,11 +1,11 @@
-:page-title: Reviewing code
+:page-title: Revisión de código
 :page-nav_order: 20
-:page-parent: Overview and Development Process
-=== Reviewing code
+:page-parent: Descripción general y proceso de desarrollo
+=== Revisión de código
 
-Jon Atack provides a guide to reviewing a Bitcoin Core PR in his article https://jonatack.github.io/articles/how-to-review-pull-requests-in-bitcoin-core[How To Review Pull Requests in Bitcoin Core^].
+Jon Atack proporciona una guía para revisar un PR de Bitcoin Core en su artículo https://jonatack.github.io/articles/how-to-review-pull-requests-in-bitcoin-core[How To Review Pull Requests in Bitcoin Core^].
 
-// Archived @ https://archive.is/MyohE
-Gloria Zhao's https://github.com/glozow/bitcoin-notes/blob/master/review-checklist.md[review checklist^] details what a "good" review might look like, along with some examples of what she personally considers good reviews.
-In addition to this, it details how potential Reviewers can approach a new PR they have chosen to review, along with the sorts of questions they should be asking (and answering) in order to provide a meaningful review.
-Some examples of the subject areas Gloria covers include the PR's subject area, motivation, downsides, approach, security and privacy risks, implementation of the idea, performance impact, concurrency footguns, tests and documentation needed.
+// Archivado en https://archive.is/MyohE
+La https://github.com/glozow/bitcoin-notes/blob/master/review-checklist.md[lista de verificación de revisión^] de Gloria Zhao detalla cómo podría ser una "buena" revisión, junto con algunos ejemplos de lo que ella personalmente busca en una revisión.
+Además de esto, detalla cómo los posibles Revisores pueden abordar un nuevo PR que han elegido revisar, junto con el tipo de preguntas que deberían estar haciendo (y respondiendo) para proporcionar una revisión completa y útil.
+Algunos ejemplos de las áreas temáticas que Gloria cubre incluyen el área temática del PR, la motivación, los inconvenientes, el enfoque, los riesgos de seguridad y privacidad, la implementación de la idea, el impacto en el rendimiento, la concurrencia y la pruebas.
