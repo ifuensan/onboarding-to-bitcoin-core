@@ -1,55 +1,55 @@
-:page-title: Development workflow
+:page-title: Flujo de desarrollo
 :page-nav_order: 10
-:page-parent: Overview and Development Process
-== Development workflow
+:page-parent: Descripción general y proceso de desarrollo
+== Flujo de desarrollo
 
-Bitcoin Core uses a GitHub-based workflow for development.
-The primary function of GitHub in the workflow is to discuss patches and connect them with review comments.
+Bitcoin Core utiliza un flujo de trabajo basado en GitHub para el desarrollo.
+La función principal de GitHub en el flujo de trabajo es discutir parches y conectarlos con comentarios de revisión.
 
-While some other prominent projects, e.g. the Linux kernel, use email to solicit feedback and review, Bitcoin Core has used GitHub for many years.
-Initially, Satoshi distributed the code through private emails and hosting source archives at bitcoin.org, and later by hosting on SourceForge (which used SVN but did not at that time have a pull request system like GitHub).
-The earliest reviewers submitted changes using patches either through email exchange with Satoshi, or by posting them on the bitcoin forum.
+Mientras que algunos otros proyectos prominentes, por ejemplo, el núcleo de Linux, usan el correo electrónico para solicitar comentarios y revisiones, Bitcoin Core ha usado GitHub durante muchos años.
+Inicialmente, Satoshi distribuía el código a través de correos electrónicos privados y alojando archivos fuente en bitcoin.org, y luego en SourceForge (que usaba SVN pero en ese momento no tenía una función de solicitud de extracción).
+Los primeros revisores enviaban cambios usando parches, ya sea a través de intercambio de correos electrónicos con Satoshi, o publicándolos en el foro de bitcoin.
 
-In August 2009, the source code was moved to GitHub by Sirius, and development has remained there and used the GitHub workflows ever since.
+En agosto de 2009, el código fuente fue movido a GitHub por Sirius, y desde entonces el desarrollo ha permanecido allí y ha utilizado los flujos de trabajo de GitHub.
 
-=== Use of GitHub
+=== Uso de GitHub
 
-The GitHub side of the Bitcoin Core workflow for Contributors consists primarily of:
+El lado de GitHub del flujo de trabajo de Bitcoin Core para los Contribuidores consiste principalmente en:
 
 * Issues
 * PRs
-* Reviews
-* Comments
+* Revisiones
+* Comentarios
 
-Generally, issues are used for two purposes:
+Generalmente, los issues se utilizan para dos propósitos:
 
-. Posting known issues with the software, e.g., bug reports, crash logs
-. Soliciting feedback on potential changes without providing associated code, as would be required in a PR.
+. Publicar problemas conocidos con el software, por ejemplo, informes de errores, registros de fallos
+. Solicitar comentarios sobre posibles cambios sin proporcionar el código asociado, como sería necesario en un PR.
 
-GitHub provides their own https://guides.github.com/features/issues/[guide^] on mastering Issues which is worth reading to understand the feature-set available when working with an issue.
+GitHub proporciona su propia https://guides.github.com/features/issues/[guía^] sobre el dominio de Issues que vale la pena leer para comprender el conjunto de características disponibles al trabajar con un issue.
 
-PRs are where Contributors can submit their code against the main codebase and solicit feedback on the concept, the approach taken for the implementation, and the actual implementation itself.
+Los PRs son donde los Contribuidores pueden enviar su código contra la base de código principal y solicitar comentarios sobre el concepto, el enfoque tomado para la implementación y la implementación en sí.
 
-PRs and Issues are often linked to/from one another:
+Los PRs y Issues a menudo están vinculados entre sí:
 
 [example]
 ====
-One common workflow is when an Issue is opened to report a bug.
-After replicating the issue, a Contributor creates a patch and then opens a PR with their proposed changes.
+Un flujo de trabajo común es cuando se abre un Issue para informar un error.
+Después de replicar el problema, un Contribuidor crea un parche y luego abre un PR con sus cambios propuestos.
 
-In this case, the Contributor should, in addition to comments about the patch, reference that the patch fixes the issue.
-For a patch which fixes issue 22889 this would be done by writing "fixes #22889" in the PR description or in a commit message.
-In this case, the syntax "fixes #issue-number" is caught by GitHub's https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue[pull request linker^], which handles the cross-link automatically.
+En este caso, el Contribuidor debería, además de los comentarios sobre el parche, referenciar que el parche soluciona el problema.
+Para un parche que soluciona el problema 22889, esto se haría escribiendo "fixes #22889" en la descripción del PR o en un mensaje de confirmación.
+En este caso, la sintaxis "fixes #issue-number" es detectada por el https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue[vinculador de solicitudes de extracción^] de GitHub, que cierra automáticamente el issue cuando el PR es fusionado.
 ====
 
-Another use-case of Issues is soliciting feedback on ideas that might require _significant_ changes.
-This helps free the project from having too many PRs open which aren't ready for review and might waste reviewers' time.
-In addition, this workflow can also save Contributors their _own_ valuable time, as an idea might be identified as unlikely to be accepted _before_ the contributor spends their time writing the code for it.
+Otro caso de uso de los Issues es solicitar comentarios sobre ideas que podrían requerir cambios _significativos_.
+Esto ayuda a liberar el proyecto de tener demasiados PRs abiertos que no están listos para revisión y podrían desperdiciar el tiempo de los revisores.
+Además, este flujo de trabajo también puede ahorrar tiempo valioso a los Contribuidores, ya que una idea podría ser identificada como poco probable de ser aceptada _antes_ de que el contribuidor pase su tiempo escribiendo el código.
 
-Most code changes to bitcoin are proposed directly as PRs -- there's no need to open an Issue for every idea before implementing it unless it may require significant changes.
-Additionally, other Contributors (and would-be Reviewers) will often agree with the approach of a change, but want to "see the implementation" before they can really pass judgement on it.
+La mayoría de los cambios de código en bitcoin se proponen directamente como PRs, no es necesario abrir un Issue para cada idea antes de implementarla, a menos que pueda requerir cambios significativos.
+Además, otros Contribuidores (y posibles Revisores) a menudo estarán de acuerdo con el enfoque de un cambio, pero querrán "ver la implementación" antes de poder realmente juzgarlo.
 
-GitHub is therefore used to help store and track reviews to PRs in a public way.
+Por lo tanto, GitHub se utiliza para ayudar a almacenar y rastrear revisiones a PRs de manera pública.
 
-Comments (inside Issues, PRs, Projects etc.) are where all (GitHub) users can discuss relevant aspects of the item and have history of those discussions preserved for future reference.
-Often Contributors having "informal" discussions about changes on e.g. IRC will be advised that they should echo the gist of their conversation as a comment on GitHub, so that the rationale behind changes can be more easily determined in the future.
+Los Comentarios (dentro de Issues, PRs, Proyectos, etc.) son donde todos los usuarios de (GitHub) pueden discutir aspectos relevantes del elemento y tener un historial de esas discusiones preservado para referencia futura.
+A menudo, los Contribuidores que tienen discusiones "informales" sobre cambios en, por ejemplo, IRC, serán aconsejados de que deberían reflejar la esencia de su conversación como un comentario en GitHub, para que la justificación detrás de un cambio propuesto sea clara y esté registrada.
