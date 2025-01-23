@@ -3,7 +3,7 @@
 :page-parent: Overview and Development Process
 == Contributor journeys
 
-Some Contributors have documented their journeys into the space which lets us learn about approaches they found useful, and also any pitfalls and things they found difficult along the way.
+Algunos colaboradores han documentado sus viajes al espacio, lo que nos permite conocer los enfoques que encontraron útiles, y también los obstáculos y las cosas que encontraron difíciles en el camino.
 
 * https://github.com/amitiuttarwar[Amiti Uttarwar^] - https://medium.com/@amitiu/onboarding-to-bitcoin-core-7c1a83b20365[Onboarding to Bitcoin Core^]
 * https://github.com/jonatack[Jon Atack^] - https://jonatack.github.io/articles/on-reviewing-and-helping-those-who-do-it[On Reviewing, and Helping Those Who Do It^]
