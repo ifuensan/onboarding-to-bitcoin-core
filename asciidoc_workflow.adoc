@@ -1,53 +1,54 @@
-= Use of the asciidoc format
+```asciidoc
+= Uso del formato asciidoc
 
-The https://asciidoctor.org/[asciidoc] format has been used for this documentation.
+El formato https://asciidoctor.org/[asciidoc] se ha utilizado para esta documentación.
 
-To use asciidoc format, ensure that the `asciidoctor` tool is installed (and on your system $PATH).
-Also, it can be useful to ensure your editor understands the filetype, e.g. for Vim you can install https://github.com/habamax/vim-asciidoctor[vim-asciidoctor].
+Para usar el formato asciidoc, asegúrate de que la herramienta `asciidoctor` esté instalada (y en tu $PATH del sistema).
+Además, puede ser útil asegurarte de que tu editor entienda el tipo de archivo, por ejemplo, para Vim puedes instalar https://github.com/habamax/vim-asciidoctor[vim-asciidoctor].
 
-A quick reference for asciidoc formatting can be found https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/[here].
+Una referencia rápida para el formato asciidoc se puede encontrar https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/[aquí].
 
-This documentation follows the asciidoc recommended practice of https://asciidoctor.org/docs/asciidoc-recommended-practices/#one-sentence-per-line[One Sentence Per Line]. 
-If you choose to contribute (thank you!) please try and continue this practice to make future editing more straightforward.
+Esta documentación sigue la práctica recomendada de asciidoc de https://asciidoctor.org/docs/asciidoc-recommended-practices/#one-sentence-per-line[Una Oración Por Línea]. 
+Si decides contribuir (¡gracias!), por favor trata de continuar con esta práctica para facilitar la edición futura.
 
-== Generating _index.html_ for static web hosting
+== Generar _index.html_ para alojamiento web estático
 
-You can generate an _index.html_ file for static web hosting by installing the <<asciidoctor>> tool and then running:
+Puedes generar un archivo _index.html_ para alojamiento web estático instalando la herramienta <<asciidoctor>> y luego ejecutando:
 
 [source,bash]
 ----
 asciidoctor index.adoc
 ----
 
-Simply host _index.html_ along with the _images/_ directory and its contents at the root of your web server to serve the documentation.
+Simplemente aloja _index.html_ junto con el directorio _images/_ y su contenido en la raíz de tu servidor web para servir la documentación.
 
-=== Adding mermaid diagrams
+=== Añadir diagramas mermaid
 
-If you add a mermaid diagram to an article, you must add:
+Si añades un diagrama mermaid a un artículo, debes añadir:
 
 ----
 :mermaid-puppeteer-config: ./puppeteer-config.json
 ----
 
-To the header of the file, in order that the Container/Dockerfile can have mermaid-cli pass the puppeteer config to puppeteer.
+Al encabezado del archivo, para que el contenedor/Dockerfile pueda hacer que mermaid-cli pase la configuración de puppeteer a puppeteer.
 
-=== Regenerate mermaid diagrams
+=== Regenerar diagramas mermaid
 
-In order to regenerate the mermaid diagrams, you will need https://github.com/mermaid-js/mermaid-cli[mermaid-cli] and https://docs.asciidoctor.org/diagram-extension/latest/[asciidoctor-diagram] installed.
+Para regenerar los diagramas mermaid, necesitarás https://github.com/mermaid-js/mermaid-cli[mermaid-cli] y https://docs.asciidoctor.org/diagram-extension/latest/[asciidoctor-diagram]
 
-With both of the above programs on your PATH, you can then run command:
+Con ambos programas en tu PATH, puedes ejecutar el comando:
 
 [source,shell]
 ----
 asciidoctor -r asciidoctor-diagram index.adoc
 ----
 
-To generate index.html, along with required images in the `/images` sub-directory.
+Para generar index.html, junto con las imágenes requeridas en el subdirectorio `/images`.
 
-=== Update _index.html_ automatically as a pre-commit hook
+=== Actualizar _index.html_ automáticamente como un hook de pre-commit
 
-If you prefer you can write a simple pre-commit hook to update _index.html_ file automatically at each commit.
-An example of this might be:
+Si prefieres, puedes escribir un simple hook de pre-commit para actualizar el archivo _index.html_ automáticamente en cada commit.
+Un ejemplo de esto podría ser:
 
 ._$PROJECT_ROOT/.git/hooks/pre-commit_
 [source,bash]
@@ -56,3 +57,4 @@ An example of this might be:
 
 asciidoctor index.adoc
 ----
+```
