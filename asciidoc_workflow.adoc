@@ -1,4 +1,3 @@
-```asciidoc
 = Uso del formato asciidoc
 
 El formato https://asciidoctor.org/[asciidoc] se ha utilizado para esta documentación.
@@ -57,4 +56,3 @@ Un ejemplo de esto podría ser:
 
 asciidoctor index.adoc
 ----
-```
