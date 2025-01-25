@@ -16,7 +16,7 @@ include::bootstrapping.adoc[]
 
 === CConnman
 
-https://github.com/bitcoin/bitcoin/blob/v23.0/src/net.h#L761[`CConnman`^] is the class in net that opens, maintains and closes connections to peers, manages sockets, and reads/writes messages on the network.
+https://github.com/bitcoin/bitcoin/blob/v23.0/src/net.h#L761[`CConnman`^] es la clase en net que abre, mantiene y cierra conexiones con pares, gestiona sockets y lee/escribe mensajes en la red.
 
 // For operations that are done on each connection in turn (e.g. reading from each socket in the socket handler thread, or passing messages to net_processing in the message handler thread), the common pattern is to:
 //
@@ -31,14 +31,14 @@ https://github.com/bitcoin/bitcoin/blob/v23.0/src/net.h#L761[`CConnman`^] is the
 // It also changes the order of some logic in the socket handler thread.
 // The motivation is to reduce https://stackoverflow.com/questions/1970345/what-is-thread-contention[lock contentions].
 
-=== Making connections
+=== Estableciendo conexiones
 
-`CConnman::Start()` will first attempt to bind to any specified bind (and whitebind) addresses (and onion services), along with optional I2P interface setup:
+`CConnman::Start()` primero intentará enlazar a cualquier dirección especificada en bind (y whitebind) (y servicios onion), junto con la configuración opcional de la interfaz I2P:
 
-Next we add any addresses supplied via the `-seednode` argument (loaded into `vSeedNodes`), and then load addresses (if any) from `peers.dat` and finally `anchors.dat`.
-`anchors.dat` will be empty on first run but if we are later happy with our connection to the bitcoin network (and have a clean shutdown) our two outbound block-relay-only peers will be saved in this file to aid in connectivity on subsequent program runs.
+Luego agregamos cualquier dirección suministrada a través del argumento `-seednode` (cargado en `vSeedNodes`), y luego cargamos direcciones (si las hay) desde `peers.dat` y finalmente `anchors.dat`.
+`anchors.dat` estará vacío en la primera ejecución, pero si luego estamos satisfechos con nuestra conexión a la red bitcoin (y tenemos un apagado limpio), nuestros dos pares de solo retransmisión de bloques salientes se guardarán en este archivo para ayudar en la conectividad en ejecuciones posteriores del programa.
 
-Because the networking segment of the code is multi-threaded, two `CSemaphores` are setup next which control the number of connections being made by the node.
+Debido a que el segmento de red del código es multi-hilo, se configuran dos `CSemaphores` a continuación que controlan el número de conexiones que realiza el nodo.
 
 .src/net.cpp#CConnman::Start
 [source,cpp,options=nowrap]
@@ -53,14 +53,14 @@ Because the networking segment of the code is multi-threaded, two `CSemaphores` 
     }
 ----
 
-After this we get to the primary thread initialisation with the following logic:
+Después de esto llegamos a la inicialización principal del hilo con la siguiente lógica:
 
-. A thread (`ThreadSocketHandler`) is spawned which manages the accepting (of new) and disconnecting old connections.
-. If DNS seeds are not disabled, then a thread (`ThreadDNSAddressSeed`) is spawned to request addresses from the DNS seeds.
-. A thread (`ThreadOpenAddedConnections`) is spawned to initiate manual connections (provided at startup).
-. A thread (`ThreadOpenConnections`) to make connections from addresses in `addrman`.
+. Se crea un hilo (`ThreadSocketHandler`) que gestiona la aceptación (de nuevas) y la desconexión de conexiones antiguas.
+. Si las semillas DNS no están deshabilitadas, se crea un hilo (`ThreadDNSAddressSeed`) para solicitar direcciones de las semillas DNS.
+. Se crea un hilo (`ThreadOpenAddedConnections`) para iniciar conexiones manuales (proporcionadas al inicio).
+. Un hilo (`ThreadOpenConnections`) para realizar conexiones desde direcciones en `addrman`.
 
-It might appear that DNS seeds are being tried before both manual connections and any addresses found in `peers.dat`, however closer inspection of the 109L function `CConnman::ThreadDNSAddressSeed` reveals that more than half of those lines are spent trying _not_ to query the DNS seeds, as the rationale in the code comments describes:
+Podría parecer que las semillas DNS se están probando antes que las conexiones manuales y cualquier dirección encontrada en `peers.dat`, sin embargo, una inspección más cercana de la función `CConnman::ThreadDNSAddressSeed` de 109 líneas revela que más de la mitad de esas líneas se dedican a intentar _no_ consultar las semillas DNS, como describe la lógica en los comentarios del código:
 
 .src/net.cpp#CConnman::ThreadDNSAddressSeed
 [source,cpp,options=nowrap]
@@ -79,7 +79,7 @@ It might appear that DNS seeds are being tried before both manual connections an
 //   (done in ThreadOpenConnections)
 ----
 
-We see in that function if we have > 1000 peers in our `addrman` (`DNSSEEDS_DELAY_PEER_THRESHOLD`) we will sleep for 5 minutes (`DNSSEEDS_DELAY_MANY_PEERS`) before querying the DNS seeds, but if we know about fewer than 1000 peers then we will only sleep for 11 seconds (`DNSSEEDS_DELAY_FEW_PEERS`):
+Vemos en esa función que si tenemos más de 1000 pares en nuestro `addrman` (`DNSSEEDS_DELAY_PEER_THRESHOLD`) dormiremos durante 5 minutos (`DNSSEEDS_DELAY_MANY_PEERS`) antes de consultar las semillas DNS, pero si conocemos menos de 1000 pares, solo dormiremos durante 11 segundos (`DNSSEEDS_DELAY_FEW_PEERS`):
 
 .src/net.cpp#CConnman::ThreadDNSAddressSeed
 [source,cpp,options=nowrap]
@@ -87,9 +87,9 @@ We see in that function if we have > 1000 peers in our `addrman` (`DNSSEEDS_DELA
 const std::chrono::seconds seeds_wait_time = (addrman.size() >= DNSSEEDS_DELAY_PEER_THRESHOLD ? DNSSEEDS_DELAY_MANY_PEERS : DNSSEEDS_DELAY_FEW_PEERS);
 ----
 
-A risk exists where a malicious DNS seeder eclipses a node by returning an enormous number of IP addresses.
-We mitigate this risk by limiting the number of IP addresses addrman learns to 256 per DNS seeder.
-Further down in `ThreadDNSAddressSeed()` we see such a magic number:
+Existe un riesgo donde un sembrador DNS malicioso eclipsa un nodo devolviendo una cantidad enorme de direcciones IP.
+Mitigamos este riesgo limitando el número de direcciones IP que addrman aprende a 256 por sembrador DNS.
+Más abajo en `ThreadDNSAddressSeed()` vemos tal número mágico:
 
 .src/net.cpp#CConnman::ThreadDNSAddressSeed
 [source,cpp,options=nowrap]
@@ -97,7 +97,7 @@ Further down in `ThreadDNSAddressSeed()` we see such a magic number:
 unsigned int nMaxIPs = 256; // Limits number of IPs learned from a DNS seed
 ----
 
-If after 60 seconds we have not made any connections, then `ThreadOpenConnections` will deserialize the hardcoded seeds and https://github.com/bitcoin/bitcoin/blob/v23.0/src/net.cpp#L1960-L1987[add^] them to xref:addrman.adoc#[addrman]  as candidates for connection.
+Si después de 60 segundos no hemos realizado ninguna conexión, entonces `ThreadOpenConnections` deserializará las semillas codificadas y las https://github.com/bitcoin/bitcoin/blob/v23.0/src/net.cpp#L1960-L1987[agregará^] a xref:addrman.adoc#[addrman] como candidatos para la conexión.
 ////
 
 include::message-relay.adoc[]
