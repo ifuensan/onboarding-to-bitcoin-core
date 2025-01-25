@@ -3,6 +3,4 @@
 Esta documentación se encuentra actualmente alojada en https://bitcoincore.academy[bitcoincore.academy]; sin embargo, esta ubicación puede estar sujeta a cambios en el futuro.
 
 Revisa link:asciidoc_workflow.adoc[asciidoc_workflow.adoc]
-y https://github.com/chaincodelabs/onboarding-to-bitcoin-core/blob/master/jekyll_workflow.md[jekyll_workflow.md] para obtener consejos sobre cómo contribuir e instrucciones para ejecutar localmente.
-
-https://github.com/chaincodelabs/onboarding-to-bitcoin-core/blob/master/asciidoc_workflow.adoc[
+y link:jekyll_workflow.md[jekyll_workflow.md] para obtener consejos sobre cómo contribuir e instrucciones para ejecutar localmente.
