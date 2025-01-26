@@ -1,12 +1,12 @@
-:page-title: Debugging Bitcoin Core
+:page-title: Depurando Bitcoin Core
 :page-nav_order: 50
 :page-parent: Overview and Development Process
-==== Debugging Bitcoin Core
+==== Depuración de Bitcoin Core
 
-// Archived @ https://archive.is/hRExH
-Fabian Jahr has created a https://github.com/fjahr/debugging_bitcoin[guide^] on "Debugging Bitcoin Core", aimed at detailing the ways in which various Bitcoin Core components can be debugged, including the Bitcoin Core binary itself, unit tests, functional tests along with an introduction to core dumps and the Valgrind memory leak detection suite.
+// Archivado en https://archive.is/hRExH
+Fabian Jahr ha creado una https://github.com/fjahr/debugging_bitcoin[guía^] sobre "Depuración de Bitcoin Core", destinada a detallar las formas en que se pueden depurar varios componentes de Bitcoin Core, incluido el binario de Bitcoin Core, pruebas unitarias, pruebas funcionales junto con una introducción a los volcados de núcleo y la suite de detección de fugas de memoria Valgrind.
 
-Of particular note to Developers are the configure flags used to build Bitcoin Core without optimisations to permit more effective debugging of the various resulting binary files.
+De particular interés para los desarrolladores son las banderas de configuración utilizadas para construir Bitcoin Core sin optimizaciones para permitir una depuración más efectiva de los diversos archivos binarios resultantes.
 
-Fabian has also presented on this topic a number of times.
-A https://btctranscripts.com/scalingbitcoin/tel-aviv-2019/edgedevplusplus/debugging-bitcoin/[transcript^] of his edgedevplusplus talk is available.
+Fabian también ha presentado sobre este tema en varias ocasiones.
+Una https://btctranscripts.com/scalingbitcoin/tel-aviv-2019/edgedevplusplus/debugging-bitcoin/[transcripción^] de su charla edgedevplusplus está disponible.
