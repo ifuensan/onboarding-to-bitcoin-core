@@ -1,33 +1,33 @@
-:page-title: Building Bitcoin Core
+:page-title: Construyendo Bitcoin Core
 :page-nav_order: 70
 :page-parent: Overview and Development Process
-=== Building from source
+=== Compilación desde el código fuente
 
-When building Bitcoin Core from source, there are some platform-dependant instructions to follow.
+Al compilar Bitcoin Core desde el código fuente, hay algunas instrucciones dependientes de la plataforma que se deben seguir.
 
-To learn how to build for your platform, visit the Bitcoin Core https://github.com/bitcoin/bitcoin/tree/master/doc[bitcoin/doc^] directory, and read the file named "build-\*.md", where "*" is the name of your platform.
-For windows this is "build-windows.md", for macOS this is "build-osx.md" and for most linux distributions this is "build-unix.md".
+Para aprender cómo compilar para tu plataforma, visita el directorio https://github.com/bitcoin/bitcoin/tree/master/doc[bitcoin/doc^] de Bitcoin Core, y lee el archivo llamado "build-\*.md", donde "*" es el nombre de tu plataforma.
+Para Windows esto es "build-windows.md", para macOS esto es "build-osx.md" y para la mayoría de las distribuciones de Linux esto es "build-unix.md".
 
-There is also a guide by Jon Atack on how to https://jonatack.github.io/articles/how-to-compile-bitcoin-core-and-run-the-tests[compile and test Bitcoin Core^].
+También hay una guía de Jon Atack sobre cómo https://jonatack.github.io/articles/how-to-compile-bitcoin-core-and-run-the-tests[compilar y probar Bitcoin Core^].
 
-Finally, Blockchain Commons also offer a guide to https://github.com/BlockchainCommons/Learning-Bitcoin-from-the-Command-Line/blob/master/A2_0_Compiling_Bitcoin_from_Source.md[building from source^].
+Finalmente, Blockchain Commons también ofrece una guía para https://github.com/BlockchainCommons/Learning-Bitcoin-from-the-Command-Line/blob/master/A2_0_Compiling_Bitcoin_from_Source.md[compilar desde el código fuente^].
 
-==== Cleaner builds
+==== Compilaciones más limpias
 
-It can be helpful to use a separate build directory e.g. `build/` when compiling from source.
-This can help avoid spurious Linker errors without requiring you to run `make clean` often.
+Puede ser útil usar un directorio de compilación separado, por ejemplo, `build/` al compilar desde el código fuente.
+Esto puede ayudar a evitar errores espurios del enlazador sin requerir que ejecutes `make clean` con frecuencia.
 
-From within your Bitcoin Core source directory you can run:
+Desde dentro de tu directorio de código fuente de Bitcoin Core puedes ejecutar:
 
 [source,bash]
 ----
-# Clean current source dir in case it was already configured
+# Limpiar el directorio de código fuente actual en caso de que ya esté configurado
 make distclean
 
-# Make new build dir
+# Crear un nuevo directorio de compilación
 mkdir build && cd build
 
-# Run normal build sequence with amended path
+# Ejecutar la secuencia de compilación normal con la ruta enmendada
 ../autogen.sh
 ../configure --your-normal-options-here
 make -j `nproc`
@@ -36,7 +36,7 @@ make check
 
 [TIP]
 ====
-To run individual functional tests using the bitcoind binary built in an out-of-source build change directory back to the root source and specify the _config.ini_ file from within the build directory:
+Para ejecutar pruebas funcionales individuales usando el binario bitcoind compilado en una compilación fuera del código fuente, cambia el directorio de nuevo a la raíz del código fuente y especifica el archivo _config.ini_ desde dentro del directorio de compilación:
 
 [source,bash]
 ----
