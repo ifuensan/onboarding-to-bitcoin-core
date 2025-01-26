@@ -1,7 +1,7 @@
-:page-title: Project statistics
+:page-title: Estadísticas del proyecto
 :page-nav_order: 190
 :page-parent: Overview and Development Process
-== Project stats
+== Estadísticas del proyecto
 
 .Bitcoin Core @ v24.0.1
 [source,text]
@@ -56,5 +56,5 @@
 ===============================================================================
 ----
 
-Source: https://github.com/XAMPPRocky/tokei[tokei^]
+Fuente: https://github.com/XAMPPRocky/tokei[tokei^]
 

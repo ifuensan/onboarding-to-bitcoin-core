@@ -4,30 +4,30 @@
 [[bips]]
 == BIPs
 
-Bitcoin uses Bitcoin Improvement Proposals (BIPs) as a design document for introducing new features or behaviour into bitcoin.
-Bitcoin Magazine describes what a BIP is in their article https://bitcoinmagazine.com/guides/what-is-a-bitcoin-improvement-proposal-bip[What Is A Bitcoin Improvement Proposal (BIP)^], specifically highlighting how BIPs are not necessarily binding documents required to achieve consensus.
+Bitcoin utiliza Propuestas de Mejora de Bitcoin (BIPs) como un documento de diseño para introducir nuevas características o comportamientos en bitcoin.
+Bitcoin Magazine describe qué es un BIP en su artículo https://bitcoinmagazine.com/guides/what-is-a-bitcoin-improvement-proposal-bip[¿Qué es una Propuesta de Mejora de Bitcoin (BIP)^], destacando específicamente cómo los BIPs no son necesariamente documentos vinculantes requeridos para lograr consenso.
 
-The BIPs are currently hosted on GitHub in the bitcoin/bips https://github.com/bitcoin/bips[repo^].
+Los BIPs están actualmente alojados en GitHub en el repositorio bitcoin/bips https://github.com/bitcoin/bips[repo^].
 
 [TIP]
-.BIP process
+.Proceso BIP
 ====
-The BIPs include https://github.com/bitcoin/bips/tree/master/bip-0002.mediawiki[BIP 2^] which self-describes the BIP process in more detail.
-Of particular interest might be the sections https://github.com/bitcoin/bips/tree/master/bip-0002.mediawiki#BIP_types[BIP Types^] and https://github.com/bitcoin/bips/tree/master/bip-0002.mediawiki#BIP_workflow[BIP Workflow^].
+Los BIPs incluyen https://github.com/bitcoin/bips/tree/master/bip-0002.mediawiki[BIP 2^] que se describe a sí mismo el proceso BIP con más detalle.
+De particular interés podrían ser las secciones https://github.com/bitcoin/bips/tree/master/bip-0002.mediawiki#BIP_types[Tipos de BIP^] y https://github.com/bitcoin/bips/tree/master/bip-0002.mediawiki#BIP_workflow[Flujo de trabajo de BIP^].
 ====
 
-=== What does having a BIP number assigned to an idea mean
+=== ¿Qué significa tener un número BIP asignado a una idea?
 
-Bitcoin Core https://github.com/bitcoin/bitcoin/pull/22665[issue #22665^] described how BIP125 was not being strictly adhered to by Bitcoin Core.
-This raised discussion amongst developers about whether the code (i.e. "the implementation") or the BIP itself should act as the specification, with most developers expressing that they felt that "the code was the spec" and any BIP generated was merely a design document to aid with re-implementation by others, and should be corrected if necessary.
+El https://github.com/bitcoin/bitcoin/pull/22665[issue #22665^] de Bitcoin Core describió cómo BIP125 no se estaba cumpliendo estrictamente por Bitcoin Core.
+Esto generó una discusión entre los desarrolladores sobre si el código (es decir, "la implementación") o el propio BIP debería actuar como la especificación, con la mayoría de los desarrolladores expresando que sentían que "el código era la especificación" y cualquier BIP generado era simplemente un documento de diseño para ayudar con la reimplementación por otros, y debería corregirse si fuera necesario.
 
-NOTE: This view was not completely unanimous in the community.
+NOTA: Esta opinión no fue completamente unánime en la comunidad.
 
-For consensus-critical code most Bitcoin Core Developers consider "the code is the spec" to be the ultimate source of truth, which is one of the reasons that recommending running other full node implementations can be so difficult.
-A knock-on effect of this was that there were calls for review on BIP2 itself, with respect to how BIPs should be updated/amended.
-Newly-appointed BIP maintainer Karl-Johan Alm (a.k.a. kallewoof) posted his thoughts on this to the https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019457.html[bitcoin-dev mailing list^].
+Para el código crítico para el consenso, la mayoría de los desarrolladores de Bitcoin Core consideran que "el código es la especificación" es la fuente última de verdad, lo cual es una de las razones por las que recomendar ejecutar otras implementaciones de nodos completos puede ser tan difícil.
+Un efecto secundario de esto fue que hubo llamados a revisar el propio BIP2, con respecto a cómo deberían actualizarse/modificarse los BIPs.
+El recién nombrado mantenedor de BIP, Karl-Johan Alm (también conocido como kallewoof), publicó sus pensamientos sobre esto en la https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019457.html[lista de correo bitcoin-dev^].
 
-In summary a BIP represents a design document which should assist others in implementing a specific feature in a compatible way.
-These features are optional to usage of Bitcoin, and therefore implementation of BIPs are not required to use Bitcoin, only to remain compatible.
-Simply being _assigned_ a BIP does *not* mean that an idea is endorsed as being a "good" idea, only that it is fully-specified in a way that others could use to re-implement.
-Many ideas are assigned a BIP and then never implemented or used on the wider network.
+En resumen, un BIP representa un documento de diseño que debería ayudar a otros a implementar una característica específica de manera compatible.
+Estas características son opcionales para el uso de Bitcoin, y por lo tanto la implementación de BIPs no es necesaria para usar Bitcoin, solo para mantener la compatibilidad.
+Simplemente ser _asignado_ un BIP *no* significa que una idea esté respaldada como una "buena" idea, solo que está completamente especificada de una manera que otros podrían usar para reimplementar.
+Muchas ideas son asignadas un BIP y luego nunca se implementan o usan en la red más amplia.
