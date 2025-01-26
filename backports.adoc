@@ -1,14 +1,14 @@
 :page-title: Backports
 :page-nav_order: 140
 :page-parent: Overview and Development Process
-=== Backports
+=== Backports o Retroportaciones
 
-Bitcoin Core often backports fixes for bugs and soft fork activations into previous software releases.
+Bitcoin Core a menudo retrotrae correcciones de errores y activaciones de soft fork a versiones anteriores del software.
 
-Generally maintainers will handle backporting for you, unless for some reason the process will be too difficult.
-If this point is reached a decision will be made on whether the backport is abandoned, or a specific (new) fix is created for the older software version.
+Generalmente, los mantenedores se encargarán de la retroportaciones por ti, a menos que por alguna razón el proceso sea demasiado difícil.
+Si se llega a este punto, se tomará una decisión sobre si se abandona la retroportación o se crea una corrección específica (nueva) para la versión anterior del software.
 
-== Software Life-cycle
+== Ciclo de vida del software
 
-An overview of the software life-cycle for Bitcoin Core can be found at https://bitcoincore.org/en/lifecycle/
+Se puede encontrar una visión general del ciclo de vida del software de Bitcoin Core en https://bitcoincore.org/en/lifecycle/
 
