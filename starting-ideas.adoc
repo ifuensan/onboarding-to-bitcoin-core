@@ -1,28 +1,28 @@
-:page-title: Getting started with development
+:page-title: Comenzando con el desarrollo
 :page-nav_order: 110
 :page-parent: Overview and Development Process
-=== Getting started with development
+=== Comenzando con el desarrollo
 
-One of the roles most in-demand from the project is that of code review, and in fact this is also one of the best ways of getting familiarized with the codebase too!
-Reviewing a few PRs and adding your review comments to the PR on GitHub can be really valuable for you, the PR author and the bitcoin community.
-This https://testing.googleblog.com/2018/05/code-health-understanding-code-in-review.html[Google Code Health^] blog post gives some good advice on how to go about code review and getting past "feeling that you're not as smart as the programmer who wrote the change".
-If you're going to ask some questions as part of review, try and keep questions https://testing.googleblog.com/2019/11/code-health-respectful-reviews-useful.html[respectful^].
+Uno de los roles más demandados del proyecto es el de revisión de código, ¡y de hecho, esta es también una de las mejores maneras de familiarizarse con la base de código!
+Revisar algunos PRs y agregar tus comentarios de revisión al PR en GitHub puede ser muy valioso para ti, el autor del PR y la comunidad de bitcoin.
+Esta publicación del blog de Google Code Health https://testing.googleblog.com/2018/05/code-health-understanding-code-in-review.html[^] ofrece buenos consejos sobre cómo llevar a cabo la revisión de código y superar la "sensación de que no eres tan inteligente como el programador que escribió el cambio".
+Si vas a hacer algunas preguntas como parte de la revisión, intenta mantener las preguntas https://testing.googleblog.com/2019/11/code-health-respectful-reviews-useful.html[respetuosas^].
 
-There is also a Bitcoin Core PR https://bitcoincore.reviews/[Review Club^] held weekly on IRC which provides an ideal entry point into the Bitcoin Core codebase.
-A PR is selected, questions on the PR are provided beforehand to be discussed on irc.libera.chat #bitcoin-core-pr-reviews IRC room and a host will lead discussion around the changes.
+También hay un https://bitcoincore.reviews/[Club de Revisión^] de PR de Bitcoin Core que se lleva a cabo semanalmente en IRC, lo cual proporciona un punto de entrada ideal a la base de código de Bitcoin Core.
+Se selecciona un PR, se proporcionan preguntas sobre el PR de antemano para ser discutidas en el canal de IRC irc.libera.chat #bitcoin-core-pr-reviews y un anfitrión liderará la discusión sobre los cambios.
 
-Aside from review, there are 3 main avenues which might lead you to submitting your *own* PR to the repository:
+Además de la revisión, hay 3 vías principales que podrían llevarte a enviar tu *propio* PR al repositorio:
 
-. Finding a `good first issue`, as tagged in the https://github.com/bitcoin/bitcoin/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22[issue tracker^]
-. Fixing a bug
-. Adding a new feature (that you want for yourself?)
+. Encontrar un `good first issue`, etiquetado en el https://github.com/bitcoin/bitcoin/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22[rastreador de problemas^]
+. Arreglar un error
+. Agregar una nueva característica (¿que deseas para ti mismo?)
 
-Choosing a "good first issue" from an area of the codebase that seems interesting to you is often a good approach.
-This is because these issues have been somewhat implicitly "concept ACKed" by other Contributors as "something that is likely worth someone working on".
-Don't confuse this for meaning that if you work on it that it is certain to be merged though.
+Elegir un "good first issue" de un área de la base de código que te parezca interesante a menudo es un buen enfoque.
+Esto se debe a que estos problemas han sido algo implícitamente "concept ACKed" por otros colaboradores como "algo que probablemente valga la pena que alguien trabaje en ello".
+No confundas esto con que si trabajas en ello, es seguro que se fusionará.
 
-If you don't have a bug fix or new feature in mind and you're struggling to find a good first issue which looks suitable for you, don't panic.
-Instead keep reviewing other Contributors' PRs to continue improving your understanding of the process (and the codebase) while you watch the Issue tracker for something which you like the look of.
+Si no tienes en mente una corrección de errores o una nueva característica y estás luchando por encontrar un buen primer problema que te parezca adecuado, no te preocupes.
+En su lugar, sigue revisando los PRs de otros colaboradores para continuar mejorando tu comprensión del proceso (y la base de código) mientras observas el rastreador de problemas en busca de algo que te guste.
 
-When you've decided what to work on it's time to take a look at the current behaviour of that part of the code and perhaps more importantly, try to understand _why_ this was originally implemented in this way.
-This process of codebase "archaeology" will prove invaluable in the future when you are trying to learn about other parts of the codebase on your own.
+Cuando hayas decidido en qué trabajar, es hora de echar un vistazo al comportamiento actual de esa parte del código y quizás más importante, tratar de entender _por qué_ se implementó originalmente de esta manera.
+Este proceso de "arqueología" de la base de código será invaluable en el futuro cuando intentes aprender sobre otras partes de la base de código por tu cuenta.

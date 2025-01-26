@@ -1,37 +1,37 @@
-:page-title: Communication channels
+:page-title: Canales de comunicación
 :page-nav_order: 120
 :page-parent: Overview and Development Process
-=== #bitcoin-core-dev IRC channel
+=== Canal #bitcoin-core-dev en IRC
 
-The Bitcoin Core project has an IRC channel `#bitcoin-core-dev` available on the Libera.chat network.
-If you are unfamiliar with IRC there is a short guide on how to use it with a client called Matrix https://hackmd.io/ZcCoEDnOSTSqb2RDa7fB8Q[here^].
-IRC clients for all platforms and many terminals are available.
+El proyecto Bitcoin Core tiene un canal de IRC `#bitcoin-core-dev` disponible en la red Libera.chat.
+Si no estás familiarizado con IRC, hay una guía corta sobre cómo usarlo con un cliente llamado Matrix https://hackmd.io/ZcCoEDnOSTSqb2RDa7fB8Q[aquí^].
+Hay clientes de IRC disponibles para todas las plataformas y muchos terminales.
 
-"Lurking" (watching but not talking) in the IRC channel can both be a great way to learn about new developments as well as observe how new technical changes and issues are described and thought about from other developers with an adversarial mindset.
-Once you are comfortable with the rules of the room and have questions about development then you can join in too!
+"Merodear" (observar pero no hablar) en el canal de IRC puede ser una excelente manera de aprender sobre nuevos desarrollos, así como observar cómo se describen y piensan los nuevos cambios técnicos y problemas desde otros desarrolladores con una mentalidad adversarial.
+¡Una vez que te sientas cómodo con las reglas de la sala y tengas preguntas sobre el desarrollo, también puedes unirte!
 
 [NOTE]
 ====
-This channel is reserved for discussion about _development of the Bitcoin Core software only_, so please don't ask general Bitcoin questions or talk about the price or other things which would be off topic in there.
+Este canal está reservado para la discusión sobre _el desarrollo del software Bitcoin Core solamente_, así que por favor no hagas preguntas generales sobre Bitcoin ni hables sobre el precio u otras cosas que estarían fuera de tema allí.
 
-There are plenty of other channels on IRC where those topics can be discussed.
+Hay muchos otros canales en IRC donde esos temas pueden ser discutidos.
 ====
 
-There are also regular meetings held on #bitcoin-core-dev which are free and open for anyone to attend.
-Details and timings of the various meetings are found https://bitcoincore.org/en/meetings/[here^].
+También se celebran reuniones regulares en #bitcoin-core-dev que son gratuitas y abiertas para que cualquiera pueda asistir.
+Los detalles y horarios de las diversas reuniones se encuentran https://bitcoincore.org/en/meetings/[aquí^].
 
-=== Communication
+=== Comunicación
 
-In reality there are no hard rules on choosing a discussion forum, but in practice there are some common conventions which are generally followed:
+En realidad no hay reglas estrictas para elegir un foro de discusión, pero en la práctica hay algunas convenciones comunes que generalmente se siguen:
 
-* If you want to discuss the codebase of the Bitcoin Core implementation, then discussion on either the GitHub repo or IRC channel is usually most-appropriate.
-* If you want to discuss changes to the core bitcoin protocol, then discussion on the mailing list is usually warranted to solicit feedback from (all) bitcoin developers, including the many of them that do not work on Bitcoin Core directly.
-** If mailing list discussions seem to indicate interest for a proposal, then creation of a BIP usually follows.
+* Si deseas discutir la base de código de la implementación de Bitcoin Core, entonces la discusión en el repositorio de GitHub o en el canal de IRC suele ser lo más apropiado.
+* Si deseas discutir cambios en el protocolo central de bitcoin, entonces la discusión en la lista de correo generalmente es necesaria para solicitar comentarios de (todos) los desarrolladores de bitcoin, incluidos muchos de ellos que no trabajan directamente en Bitcoin Core.
+** Si las discusiones en la lista de correo parecen indicar interés por una propuesta, entonces generalmente sigue la creación de un BIP.
 
-If discussing something Bitcoin Core-related, there can also be a question of whether it's best to open an Issue, to first discuss the problem and brainstorm possible solution approaches, or whether you should implement the changes as you see best first, open a PR, and then discuss changes in the PR.
-Again, there are no hard rules here, but general advice would be that for potentially-controversial subjects, it might be worth opening an Issue first, before (potentially) wasting time implementing a PR fix which is unlikely to be accepted.
+Si estás discutiendo algo relacionado con Bitcoin Core, también puede surgir la pregunta de si es mejor abrir un Issue, para primero discutir el problema y pensar en posibles enfoques de solución, o si deberías implementar los cambios como mejor te parezca primero, abrir un PR y luego discutir los cambios en el PR.
+Nuevamente, no hay reglas estrictas aquí, pero el consejo general sería que para temas potencialmente controvertidos, podría valer la pena abrir un Issue primero, antes de (potencialmente) perder tiempo implementando una solución PR que es poco probable que sea aceptada.
 
-Regarding communication timelines it is important to remember that many contributors are unpaid volunteers, and even if they are sponsored or paid directly, nobody owes you their time.
-That being said, often during back-and-forth communication you might want to nudge somebody for a response and it's important that you do this in a courteous way.
-There are again no hard rules here, but it's often good practice to give somebody on the order of a few days to a week to respond.
-Remember that people have personal lives and often jobs outside of Bitcoin development.
+En cuanto a los tiempos de comunicación, es importante recordar que muchos colaboradores son voluntarios no remunerados, e incluso si están patrocinados o pagados directamente, nadie te debe su tiempo.
+Dicho esto, a menudo durante la comunicación de ida y vuelta, es posible que desees empujar a alguien para obtener una respuesta y es importante que lo hagas de manera cortés.
+Nuevamente, no hay reglas estrictas aquí, pero a menudo es una buena práctica dar a alguien del orden de unos pocos días a una semana para responder.
+Recuerda que las personas tienen vidas personales y a menudo trabajos fuera del desarrollo de Bitcoin.
