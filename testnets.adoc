@@ -1,56 +1,56 @@
-:page-title: Using a test network
+:page-title: Uso de una red de prueba
 :page-nav_order: 90
 :page-parent: Overview and Development Process
-=== Testing
+=== Pruebas
 
-Three types of test network are available:
+Tres tipos de redes de prueba están disponibles:
 
 1. Testnet
 2. Regtest
 3. Signet
 
-These three networks all use coins of zero value, so can be used experimentally.
+Estas tres redes usan monedas de valor cero, por lo que pueden ser utilizadas experimentalmente.
 
-They primary differences between the networks are as follows:
+Las principales diferencias entre las redes son las siguientes:
 
-.Comparison of different test networks
+.Comparación de diferentes redes de prueba
 [cols="1h,1,1,1"]
 |===================================================================================================================================
-| Feature                   | Testnet                        | Regtest                       | Signet
+| Característica            | Testnet                        | Regtest                       | Signet
 
-| Mining algorithm          | Public hashing with difficulty | Local hashing, low difficulty | Signature from authorized signers
-| Block production schedule | Varies per hashrate            | On-demand                     | Reliable intervals (default 2.5 mins)
-| P2P port                  | 18333                          | 18444                         | 38333
-| RPC port                  | 18332                          | 18443                         | 38332
-| Peers                     | Public                         | None                          | Public
-| Topology                  | Organic                        | Manual                        | Organic
-| Chain birthday            | 2011-02-02                     | At time of use                | 2020-09-01
-| Can initiate re-orgs      | If Miner                       | Yes                           | No
-| Primary use               | Networked testing              | Automated integration tests   | Networked testing
+| Algoritmo de minería      | Hashing público con dificultad | Hashing local, baja dificultad| Firma de firmantes autorizados
+| Programación de producción de bloques | Varía según el hashrate | A demanda                     | Intervalos confiables (por defecto 2.5 mins)
+| Puerto P2P                | 18333                          | 18444                         | 38333
+| Puerto RPC                | 18332                          | 18443                         | 38332
+| Pares                     | Público                        | Ninguno                       | Público
+| Topología                 | Orgánica                       | Manual                        | Orgánica
+| Nacimiento de la cadena   | 2011-02-02                     | En el momento de uso          | 2020-09-01
+| Puede iniciar reorgs      | Si Minero                      | Sí                            | No
+| Uso principal             | Pruebas en red                 | Pruebas de integración automatizadas | Pruebas en red
 |===================================================================================================================================
 
 ==== Signet
 
-Signet is both a tool that allows Developers to create their own networks for testing interactions between different Bitcoin software, and the name of the most popular of these public testing networks.
-Signet was codified in https://github.com/bitcoin/bips/tree/master/bip-0325.mediawiki[BIP 325^].
+Signet es tanto una herramienta que permite a los desarrolladores crear sus propias redes para probar interacciones entre diferentes software de Bitcoin, como el nombre de la más popular de estas redes de prueba públicas.
+Signet fue codificado en https://github.com/bitcoin/bips/tree/master/bip-0325.mediawiki[BIP 325^].
 
-To connect to the "main" Signet network, simply start bitcoind with the signet option, e.g. `bitcoind -signet`.
-Don't forget to also pass the signet option to `bitcoin-cli` if using it to control bitcoind, e.g. `bitcoin-cli -signet your_command_here`.
-Instructions on how to setup your own Signet network can be found in the Bitcoin Core Signet https://github.com/bitcoin/bitcoin/tree/master/contrib/signet/README.md[README.md^].
-The Bitcoin wiki Signet https://en.bitcoin.it/wiki/Signet[page^] provides additional background on Signet.
+Para conectarse a la red "principal" de Signet, simplemente inicie bitcoind con la opción signet, por ejemplo, `bitcoind -signet`.
+No olvide también pasar la opción signet a `bitcoin-cli` si lo usa para controlar bitcoind, por ejemplo, `bitcoin-cli -signet su_comando_aquí`.
+Las instrucciones sobre cómo configurar su propia red Signet se pueden encontrar en el https://github.com/bitcoin/bitcoin/tree/master/contrib/signet/README.md[README.md^] de Signet de Bitcoin Core.
+La página de Signet en la wiki de Bitcoin https://en.bitcoin.it/wiki/Signet[proporciona^] información adicional sobre Signet.
 
 ==== Regtest
 
-Another test network named _regtest_, which stands for _regression test_, is also available.
-This network is enabled by starting bitcoind with the `-regtest` option.
-This is an entirely self-contained mode, giving you complete control of the state of the blockchain.
-Blocks can simply be mined on command by the network operator.
+Otra red de prueba llamada _regtest_, que significa _prueba de regresión_, también está disponible.
+Esta red se habilita iniciando bitcoind con la opción `-regtest`.
+Este es un modo completamente autónomo, que le da control total sobre el estado de la blockchain.
+Los bloques pueden ser minados simplemente a pedido por el operador de la red.
 
-The https://github.com/chaincodelabs/bitcoin-core-onboarding/blob/main/functional_test_framework.asciidoc[functional tests^] use this mode, but you can also run it manually.
-It provides a good means to learn and experiment on your own terms.
-It's often run with a single node but may be run with multiple co-located (local) nodes (most of the functional tests do this).
-The blockchain initially contains only the genesis block, so you need to mine >100 blocks in order to have any spendable coins from a mature coinbase.
-Here's an example session (after you've built `bitcoind` and `bitcoin-cli`):
+Las https://github.com/chaincodelabs/bitcoin-core-onboarding/blob/main/functional_test_framework.asciidoc[pruebas funcionales^] usan este modo, pero también puede ejecutarlo manualmente.
+Proporciona un buen medio para aprender y experimentar en sus propios términos.
+A menudo se ejecuta con un solo nodo, pero puede ejecutarse con múltiples nodos co-localizados (locales) (la mayoría de las pruebas funcionales hacen esto).
+La blockchain inicialmente contiene solo el bloque génesis, por lo que necesita minar >100 bloques para tener monedas gastables de una coinbase madura.
+Aquí hay una sesión de ejemplo (después de haber construido `bitcoind` y `bitcoin-cli`):
 
 [source,bash,options="nowrap"]
 ----
@@ -93,23 +93,23 @@ $ src/bitcoin-cli -regtest -datadir=/tmp/regtest-datadir getbalances
 $ src/bitcoin-cli -regtest -datadir=/tmp/regtest-datadir stop
 ----
 
-You may stop and restart the node and it will use the existing state.
-(Simply remove the data directory to start again from scratch.)
+Puede detener y reiniciar el nodo y utilizará el estado existente.
+(Simplemente elimine el directorio de datos para comenzar de nuevo desde cero).
 
-Blockchain Commons offer a guide to https://github.com/BlockchainCommons/Learning-Bitcoin-from-the-Command-Line/blob/master/A3_0_Using_Bitcoin_Regtest.md[Using Bitcoin Regtest^].
+Blockchain Commons ofrece una guía para https://github.com/BlockchainCommons/Learning-Bitcoin-from-the-Command-Line/blob/master/A3_0_Using_Bitcoin_Regtest.md[Usar Bitcoin Regtest^].
 
 ==== Testnet
 
-Testnet is a public bitcoin network where mining is performed in the usual way (hashing) by decentralized miners.
+Testnet es una red pública de bitcoin donde la minería se realiza de la manera habitual (hashing) por mineros descentralizados.
 
-However, due to much lower hashrate (than mainnet), testnet is susceptible extreme levels of inter-block volatility due to the way the difficulty adjustment (DA) works: if a mainnet-scale miner wants to "test" their mining setup on testnet then they may cause the difficulty to increase greatly.
-Once the miner has concluded their tests they may remove all hashpower from the network at once.
-This can leave the network with a high difficulty which the DA will take a long time to compensate for.
+Sin embargo, debido a una tasa de hash mucho más baja (que la red principal), testnet es susceptible a niveles extremos de volatilidad entre bloques debido a la forma en que funciona el ajuste de dificultad (DA): si un minero a escala de la red principal quiere "probar" su configuración de minería en testnet, entonces pueden causar que la dificultad aumente enormemente.
+Una vez que el minero ha concluido sus pruebas, pueden eliminar toda la potencia de hash de la red de una vez.
+Esto puede dejar la red con una alta dificultad que el DA tardará mucho tiempo en compensar.
 
-Therefore a https://en.bitcoin.it/wiki/Testnet#Differences["20 minute" rule^] was introduced such that the difficulty would reduce to the minimum for one block before returning to its previous value.
-This ensures that there are no intra-block times greater than 20 minutes.
+Por lo tanto, se introdujo una https://en.bitcoin.it/wiki/Testnet#Differences["regla de 20 minutos"^] tal que la dificultad se reduciría al mínimo por un bloque antes de volver a su valor anterior.
+Esto asegura que no haya tiempos entre bloques mayores de 20 minutos.
 
-However there is a bug in the implementation which means that if this adjustment occurs on a difficulty adjustment block the difficulty is lowered to the minimum for one block but then not reset, making it permanent rather than a one-off adjustment.
-This will result in a large number of blocks being found until the DA catches up to the level of hashpower on the network.
+Sin embargo, hay un error en la implementación que significa que si este ajuste ocurre en un bloque de ajuste de dificultad, la dificultad se reduce al mínimo por un bloque pero luego no se restablece, haciéndolo permanente en lugar de un ajuste único.
+Esto resultará en un gran número de bloques encontrados hasta que el DA se ponga al nivel de la potencia de hash en la red.
 
-It's usually preferable to test private changes on a local regtest, or public changes on a Signet for this reason.
+Por esta razón, generalmente es preferible probar cambios privados en un regtest local, o cambios públicos en un Signet.

@@ -1,7 +1,7 @@
-:page-title: Codebase documentation
+:page-title: Documentación del código
 :page-nav_order: 80
 :page-parent: Overview and Development Process
-=== Codebase documentation
+=== Documentación del código
 
-Bitcoin Core uses https://www.doxygen.nl/index.html[Doxygen^] to generate developer documentation automatically from its annotated C++ codebase.
-Developers can access documentation of the current release of Bitcoin Core online at https://doxygen.bitcoincore.org/[doxygen.bitcoincore.org^], or alternatively can generate documentation for their current git `HEAD` using `make docs` (see https://github.com/bitcoin/bitcoin/tree/master/doc/developer-notes.md#generating-documentation[Generating Documentation^] for more info).
+Bitcoin Core utiliza https://www.doxygen.nl/index.html[Doxygen^] para generar documentación de desarrolladores automáticamente a partir de su código C++ anotado.
+Los desarrolladores pueden acceder a la documentación de la versión actual de Bitcoin Core en línea en https://doxygen.bitcoincore.org/[doxygen.bitcoincore.org^], o alternativamente pueden generar la documentación para su `HEAD` actual de git usando `make docs` (ver https://github.com/bitcoin/bitcoin/tree/master/doc/developer-notes.md#generating-documentation[Generación de Documentación^] para más información).
