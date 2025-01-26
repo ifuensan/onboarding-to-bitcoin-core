@@ -1,10 +1,10 @@
-:page-title: Researching past changes
+:page-title: Investigación de cambios pasados
 :page-nav_order: 60
 :page-parent: Overview and Development Process
-=== Codebase archaeology
+=== Arqueología del código
 
-When considering changing code it can be helpful to try and first understand the rationale behind why it was implemented that way originally.
-One of the best ways to do this is by using a combination of git tools:
+Cuando se considera cambiar el código, puede ser útil tratar de entender primero la razón detrás de por qué se implementó de esa manera originalmente.
+Una de las mejores maneras de hacer esto es utilizando una combinación de herramientas de git:
 
 * `git blame`
 * `git log -S`
@@ -12,19 +12,19 @@ One of the best ways to do this is by using a combination of git tools:
 * `git log -p`
 * `git log -L`
 
-As well as the discussions in various places on the GitHub repo.
+Así como las discusiones en varios lugares del repositorio de GitHub.
 
 ==== git blame
 
-The git `blame` command will show you when (and by who) a particular line of code was last _changed_.
+El comando `blame` de git te mostrará cuándo (y por quién) se cambió por última vez una línea particular de código.
 
-For example, if we checkout Bitcoin Core at https://github.com/bitcoin/bitcoin/tree/v22.0[v22.0^] and we are planning to make a change related to the `m_addr_send_times_mutex` found in _src/net_processing.cpp_, we might want to find out more about its history before touching it.
+Por ejemplo, si revisamos Bitcoin Core en https://github.com/bitcoin/bitcoin/tree/v22.0[v22.0^] y estamos planeando hacer un cambio relacionado con el `m_addr_send_times_mutex` que se encuentra en _src/net_processing.cpp_, podríamos querer saber más sobre su historia antes de tocarlo.
 
-With `git `blame` we can find out the last person who touched this code:
+Con `git blame` podemos encontrar a la última persona que tocó este código:
 
 [source,bash,options="nowrap"]
 ----
-# Find the line number for blame
+# Encuentra el número de línea para blame
 $ grep -n m_addr_send_times_mutex src/net_processing.cpp
 233:    mutable Mutex m_addr_send_times_mutex;
 235:    std::chrono::microseconds m_next_addr_send GUARDED_BY(m_addr_send_times_mutex){0};
@@ -39,7 +39,7 @@ $ git blame -L233,233 src/net_processing.cpp
 76568a3351 (John Newbery 2020-07-10 16:29:57 +0100 233)     mutable Mutex m_addr_send_times_mutex;
 ----
 
-With this information we can easily look up that commit to gain some additional context:
+Con esta información podemos buscar fácilmente ese commit para obtener un contexto adicional:
 
 [source,bash,options=nowrap]
 ----
@@ -54,18 +54,18 @@ Date:   Fri Jul 10 16:29:57 2020 +0100
 
 ----
 
-So we've learned now that this mutex was moved here by John from _net.{cpp|h}_ in it's most recent touch.
-Let's see what else we can find out about it.
+Así que ahora hemos aprendido que este mutex fue movido aquí por John desde _net.{cpp|h}_ en su toque más reciente.
+Veamos qué más podemos averiguar sobre él.
 
 ==== git log -S
 
-`git log -S` allows us to search for commits where this line was _modified_ (not where it was only moved, for that use `git log -G`).
+`git log -S` nos permite buscar commits donde esta línea fue _modificada_ (no donde solo fue movida, para eso usa `git log -G`).
 
 [TIP]
 ====
-A 'modification' (vs. a 'move') in git parlance is the result of uneven instances of the search term in the commit diffs' add/remove sections.
+Una 'modificación' (vs. un 'movimiento') en la jerga de git es el resultado de instancias desiguales del término de búsqueda en las secciones de agregar/eliminar de los diffs del commit.
 
-This implies that this term has either been added or removed in the commit.
+Esto implica que este término ha sido agregado o eliminado en el commit.
 ====
 
 [source,bash,options=nowrap]
@@ -98,42 +98,42 @@ Date:   Mon Mar 29 11:36:19 2021 +0100
 
 ----
 
-We learn now that John also originally added this to _net.{cpp|h}_, before later moving it into _net_processing.{cpp|h}_ as part of a push to separate out `addr` relay data and logic from _net.cpp_.
+Ahora aprendemos que John también agregó originalmente esto a _net.{cpp|h}_, antes de moverlo a _net_processing.{cpp|h}_ como parte de un esfuerzo por separar los datos y la lógica de retransmisión de `addr` de _net.cpp_.
 
 ==== git log -p
 
-`git log -p` (usually also given with a file name argument) follows each commit message with a _patch_ (diff) of the changes made by that commit to that file (or files).
-This is similar to `git blame` except that `git blame` shows the source of only lines _currently_ in the file.
+`git log -p` (usualmente también dado con un argumento de nombre de archivo) sigue cada mensaje de commit con un _parche_ (diff) de los cambios realizados por ese commit a ese archivo (o archivos).
+Esto es similar a `git blame` excepto que `git blame` muestra la fuente de solo las líneas _actualmente_ en el archivo.
 
 ==== git log -L
 
-The `-L` parameter provided to git log will allow you to trace certain lines of a file through a range given by `<start,<end>`.
+El parámetro `-L` proporcionado a git log te permitirá rastrear ciertas líneas de un archivo a través de un rango dado por `<start,<end>`.
 
-However, newer versions of git will also allow you to provide `git log -L` with a function name and a file, using:
+Sin embargo, las versiones más nuevas de git también te permitirán proporcionar `git log -L` con un nombre de función y un archivo, usando:
 
 [source,shell]
 ----
 git log -L :<funcname>:<file>
 ----
 
-This will then display commits which modified this function in your pager.
+Esto mostrará los commits que modificaron esta función en tu paginador.
 
 ==== git log --follow _file..._
 
-One of the most famous https://github.com/bitcoin/bitcoin/pull/9260[file renames^] was _src/main.{h,cpp}_ to _src/validation.{h,cpp}_ in 2016.
-If you simply run `git log src/validation.h`, the oldest displayed commit is one that implemented the rename.
-`git log --follow src/validation.h` will show the same recent commits followed by the older _src/main.h_ commits.
+Uno de los https://github.com/bitcoin/bitcoin/pull/9260[renombramientos de archivos^] más famosos fue _src/main.{h,cpp}_ a _src/validation.{h,cpp}_ en 2016.
+Si simplemente ejecutas `git log src/validation.h`, el commit más antiguo mostrado es uno que implementó el renombramiento.
+`git log --follow src/validation.h` mostrará los mismos commits recientes seguidos por los commits más antiguos de _src/main.h_.
 
-To see the history of a file that's been removed, specify " -- " before the file name, such as:
+Para ver la historia de un archivo que ha sido eliminado, especifica " -- " antes del nombre del archivo, como:
 [source,bash]
 ----
 git log -- some_removed_file.cpp
 ----
 
-==== PR discussion
+==== Discusión de PR
 
-To get even more context on the change we can leverage GitHub and take a look at the comments on the PR where this mutex was introduced (or at any subsequent commit where it was modified).
-To find the PR you can either paste the commit hash (`4ad4abcf07efefafd439b28679dff8d6bbf62943`) into GitHub, or list merge commits in reverse order, showing oldest merge with the commit at the top to show the specific PR number e.g.:
+Para obtener aún más contexto sobre el cambio, podemos aprovechar GitHub y echar un vistazo a los comentarios en el PR donde se introdujo este mutex (o en cualquier commit posterior donde fue modificado).
+Para encontrar el PR puedes pegar el hash del commit (`4ad4abcf07efefafd439b28679dff8d6bbf62943`) en GitHub, o listar los commits de merge en orden inverso, mostrando el merge más antiguo con el commit en la parte superior para mostrar el número de PR específico, por ejemplo:
 
 [source,bash,options=nowrap]
 ----
@@ -142,9 +142,9 @@ $ git log --merges --reverse --oneline --ancestry-path 4ad4abcf07efefafd439b2867
 d3fa42c79 Merge bitcoin/bitcoin#21186: net/net processing: Move addr data into net_processing
 ----
 
-Reading up on https://github.com/bitcoin/bitcoin/pull/21186[PR#21186^] will hopefully provide us with more context we can use.
+Leer sobre https://github.com/bitcoin/bitcoin/pull/21186[PR#21186^] con suerte nos proporcionará más contexto que podamos usar.
 
 [example]
 ====
-We can see from the linked https://github.com/bitcoin/bitcoin/issues/19398#issue-646725848[issue 19398^] what the motivation for this move was.
+Podemos ver desde el https://github.com/bitcoin/bitcoin/issues/19398#issue-646725848[issue 19398^] vinculado cuál fue la motivación para este movimiento.
 ====
