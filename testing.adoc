@@ -1,41 +1,42 @@
-:page-title: Testing your contributions
+:page-title: Probando tus contribuciones
 :page-nav_order: 40
 :page-parent: Overview and Development Process
-==== Continuous integration
 
-When PRs are submitted against the primary Bitcoin Core repo a series of CI https://github.com/bitcoin/bitcoin/tree/v23.0/ci[tests^] will automatically be run.
-These include a series of linters and formatters such as `clang-format`, `flake8` and `shellcheck`.
-It's possible (and advised) to run these checks locally against any changes you make before you push them.
+==== Integración continua
 
-In order to run the lints yourself you'll have to first make sure your python environment and system have the packages listed in the CI install https://github.com/bitcoin/bitcoin/blob/v23.0/ci/lint/04_install.sh[script].
-You can then run a decent sub-set of the checks by running:
+Cuando se envían PRs contra el repositorio principal de Bitcoin Core, se ejecutará automáticamente una serie de https://github.com/bitcoin/bitcoin/tree/v23.0/ci[pruebas de CI^].
+Estas incluyen una serie de linters y formateadores como `clang-format`, `flake8` y `shellcheck`.
+Es posible (y recomendable) ejecutar estas comprobaciones localmente contra cualquier cambio que realices antes de enviarlos.
+
+Para ejecutar los linters tú mismo, primero debes asegurarte de que tu entorno de Python y tu sistema tengan los paquetes listados en el https://github.com/bitcoin/bitcoin/blob/v23.0/ci/lint/04_install.sh[script de instalación de CI].
+Luego puedes ejecutar un subconjunto decente de las comprobaciones ejecutando:
 
 [source,bash]
 ----
 python test/lint/lint-circular-dependencies.py
 
-# requires requires 'flake8', 'mypy', 'pyzmq', 'codespell', 'vulture'
+# requiere 'flake8', 'mypy', 'pyzmq', 'codespell', 'vulture'
 python test/lint/lint-python.py
 
 python test/lint/lint-whitespace.py
 ----
 
-Or you can run all checks with:
+O puedes ejecutar todas las comprobaciones con:
 
 [source,bash]
 ----
 cd ./test/lint/test_runner/ && cargo fmt && cargo clippy && cargo run
 ----
 
-NOTE: Previously these checks were shell scripts (`*.sh`), but they have now been migrated to python on master.
+NOTA: Anteriormente, estas comprobaciones eran scripts de shell (`*.sh`), pero ahora se han migrado a Python en master.
 +
-If you are following with tag v23.0 these may still exist as `*.sh`.
+Si estás siguiendo con la etiqueta v23.0, es posible que aún existan como `*.sh`.
 
-Linting your changes reduces the chances of pushing them as a PR and then having them quickly being marked as failing CI. The GitHub PR page auto-updates the CI status.
+Lintear tus cambios reduce las posibilidades de enviarlos como un PR y que luego se marquen rápidamente como fallidos en CI. La página de PR de GitHub actualiza automáticamente el estado de CI.
 
-TIP: If you do fail a lint or any other CI check, force-pushing the fix to your branch will cancel the currently-running CI checks and restart them.
+CONSEJO: Si fallas un lint u otra comprobación de CI, forzar el envío del arreglo a tu rama cancelará las comprobaciones de CI en curso y las reiniciará.
 
-==== Build issues
+==== Problemas de compilación
 
-Some compile-time issues can be caused by an unclean build directory.
-The comments in https://github.com/bitcoin/bitcoin/issues/19330[issue 19330^] provide some clarifications and tips on how other Contributors clean their directories, as well as some ideas for shell aliases to boost productivity.
+Algunos problemas en tiempo de compilación pueden ser causados por un directorio de compilación no limpio.
+Los comentarios en https://github.com/bitcoin/bitcoin/issues/19330[el issue 19330^] proporcionan algunas aclaraciones y consejos sobre cómo otros colaboradores limpian sus directorios, así como algunas ideas para alias de shell para aumentar la productividad.

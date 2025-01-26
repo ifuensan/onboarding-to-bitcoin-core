@@ -80,6 +80,6 @@ Después de la activación de taproot, si se ve una transacción previamente val
 La parte más intensiva en computación de la validación de scripts es la verificación de firmas (indicada en un script por opcodes como `OP_CHECKSIG`), que no cambia según el contexto.
 Para ahorrar al nodo trabajo repetitivo, al inicio de las verificaciones de scripts, partes de la transacción se https://github.com/bitcoin/bitcoin/blob/v23.0/src/script/interpreter.cpp#L1423[serializan, hashean y almacenan^] en una estructura `PrecomputedTransactionData` para su uso en la verificación de firmas.
 Esto es especialmente útil en transacciones que tienen múltiples entradas y/o firmas.
-Además, el resultado almacenado en caché de `PolicyScriptChecks` se puede usar inmediatamente en `ConsensusScriptChecks`; ¡casi nunca necesitamos verificar la misma firma más de una vez!
+Además, el resultado almacenado en caché de `PolicyScriptChecks` se puede usar inmediatamente en `ConsensusScriptChecks`; ¡casi nunca necesitamos verificar la misma firma más de una vez!.
 
 ////
