@@ -1,15 +1,15 @@
-:page-title: Manual testing of a functional test
+:page-title: Pruebas manuales de un test funcional
 :page-nav_order: 100
 :page-parent: Overview and Development Process
-==== Manual testing while running a functional test
+==== Pruebas manuales mientras se ejecuta un test funcional
 
-Running regtest as described allows you to start from scratch with an empty chain, empty wallet, and no existing state.
+Ejecutar regtest como se describe permite comenzar desde cero con una cadena vacía, una billetera vacía y sin estado existente.
 
-An effective way to use regtest is to start a https://github.com/chaincodelabs/bitcoin-core-onboarding/blob/main/functional_test_framework.asciidoc[functional test^] and insert a python debug breakpoint.
-You can set a breakpoint in a test by adding `import pdb; pdb.set_trace()` at the desired stopping point; when the script reaches this point you'll see the debugger's `(Pdb)` prompt, at which you can type `help` and see and do all kinds of useful things.
+Una forma efectiva de usar regtest es iniciar una https://github.com/chaincodelabs/bitcoin-core-onboarding/blob/main/functional_test_framework.asciidoc[prueba funcional^] e insertar un punto de interrupción de depuración en Python.
+Puedes establecer un punto de interrupción en una prueba agregando `import pdb; pdb.set_trace()` en el punto de parada deseado; cuando el script llegue a este punto, verás el prompt del depurador `(Pdb)`, en el cual puedes escribir `help` y ver y hacer todo tipo de cosas útiles.
 
-While the (Python) test is paused, you can still control the node using `bitcoin-cli`.
-First you need to look up the data directory for the node(s), as below:
+Mientras la prueba (Python) está pausada, aún puedes controlar el nodo usando `bitcoin-cli`.
+Primero necesitas buscar el directorio de datos para el/los nodo(s), como se muestra a continuación:
 
 [source,bash,options=nowrap]
 ----
@@ -28,8 +28,8 @@ $ src/bitcoin-cli -datadir=/tmp/bitcoin_func_test_ovsi15f9/node0 getblockchainin
 ----
 
 ////
-Add `import time; time.sleep(600)` somewhere into a functional test (which is just a Python script) to suspend the test at that point for 10 minutes. (you may want to add a `print("paused")` statement just before the call to `sleep()` to know it's been reached)
+Agrega `import time; time.sleep(600)` en algún lugar de una prueba funcional (que es solo un script de Python) para suspender la prueba en ese punto durante 10 minutos. (puedes agregar una declaración `print("paused")` justo antes de la llamada a `sleep()` para saber que se ha alcanzado ese punto)
 
-This has the further advantage (over calling `time.sleep()`), in that you can single-step through the test while also manually interacting with the nodes, combining automated and manual testing.
+Esto tiene la ventaja adicional (sobre llamar a `time.sleep()`), de que puedes ejecutar la prueba paso a paso mientras también interactúas manualmente con los nodos, combinando pruebas automatizadas y manuales.
 
 ////
