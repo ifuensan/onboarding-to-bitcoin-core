@@ -1,6 +1,6 @@
 :page-title: Ejercicios
 :page-nav_order: 200
-:page-parent: Overview and Development Process
+:page-parent: Descripción general y proceso de desarrollo 
 == Ejercicios
 
 Las secciones subsecuentes contendrán varios ejercicios relacionados con sus áreas temáticas que requerirán controlar nodos de Bitcoin Core, compilar Bitcoin Core y hacer cambios en el código.
