@@ -1,46 +1,46 @@
-:page-title: Tests overview
+:page-title: Resumen de pruebas
 :page-nav_order: 30
-:page-parent: Architecture
+:page-parent: Arquitectura
 :mermaid-puppeteer-config: ./puppeteer-config.json
-== Tests overview
+== Resumen de pruebas
 
-.Tests overview
+.Resumen de pruebas
 [%autowidth]
 |===
-|Tool |Usage
+|Herramienta |Uso
 
-|unit tests
+|tests unitarios
 |`make check` or `./src/test_bitcoin`
 
-|functional tests
+|tests funcionales
 |`test/functional/test_runner.py`
 
-|lint checks
+|comprobaciones de lint
 |See the https://github.com/bitcoin/bitcoin/blob/master/test/lint/README.md#running-locally[documentation^]
 
 |fuzz
 |See the https://github.com/bitcoin/bitcoin/blob/master/doc/fuzzing.md[documentation^]
 
-|util tests
+|pruebas de utilidades
 |`test/util/test_runner.py`
 
 |===
 
-Bitcoin Core is also introducing (functional) "stress tests" which challenge the program via interruptions and missing files to ensure that we fail gracefully, e.g. the tests introduced in https://github.com/bitcoin/bitcoin/pull/23289[PR#23289^].
+Bitcoin Core también está introduciendo "pruebas de estrés" (funcionales) que desafían el programa mediante interrupciones y archivos faltantes para asegurar que fallemos de manera controlada, por ejemplo, las pruebas introducidas en https://github.com/bitcoin/bitcoin/pull/23289[PR#23289^].
 
-=== Test directory structure
+=== Estructura del directorio de pruebas
 
-The following diagram gives a brief overview of how the tests are structured within the source directory.
+El siguiente diagrama ofrece una breve descripción de cómo están estructuradas las pruebas dentro del directorio fuente.
 
-WARNING: This diagram is **not** exhaustive and includes simplifications.
+ADVERTENCIA: Este diagrama **no** es exhaustivo e incluye simplificaciones.
 
-NOTE: dashed lines indicate optional components
+NOTA: las líneas discontinuas indican componentes opcionales.
 
-NOTE: The `fuzz_targets` themselves are located in the `test` folder, however the fuzz tests are run via the `test_runner` in src/test so we point fuzz to there.
+NOTA: Los `fuzz_targets` se encuentran en la carpeta `test`, sin embargo, las pruebas de fuzz se ejecutan a través del `test_runner` en src/test, por lo que apuntamos fuzz allí.
 
-NOTE: `qa_assets` are found in a https://github.com/bitcoin-core/qa-assets[separate^] repo altogether, as they are quite large (~3.5GB repo size and ~13.4GB on clone).
+NOTA: Los `qa_assets` se encuentran en un repositorio https://github.com/bitcoin-core/qa-assets[separado^] por completo, ya que son bastante grandes (~3.5GB de tamaño del repositorio y ~13.4GB al clonar).
 
-.Test directory Structure
+.Estructura del directorio de pruebas
 [mermaid, target=bitcoin-core-tests]
 ....
 flowchart LR
@@ -65,7 +65,7 @@ flowchart LR
     class functional,lint,util,fuzz,unit types
 ....
 
-=== Test coverage
+=== Cobertura de pruebas
 
-Bitcoin Core's test coverage reports can be found https://maflcko.github.io/b-c-cov/[here^].
+Los informes de cobertura de pruebas de Bitcoin Core se pueden encontrar https://maflcko.github.io/b-c-cov/[aquí^].
 

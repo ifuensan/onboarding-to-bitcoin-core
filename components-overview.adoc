@@ -1,16 +1,16 @@
-:page-title: Overview of bitcoind
+:page-title: Descripción general de bitcoind
 :page-nav_order: 20
-:page-parent: Architecture
+:page-parent: Arquitectura
 :mermaid-puppeteer-config: ./puppeteer-config.json
-== Overview of bitcoind
+== Descripción general de bitcoind
 
-The following diagram gives a brief overview of how some of the major components in bitcoind are related.
+El siguiente diagrama ofrece una breve descripción de cómo se relacionan algunos de los componentes principales de bitcoind.
 
-WARNING: This diagram is **not** exhaustive and includes simplifications.
+ADVERTENCIA: Este diagrama **no** es exhaustivo e incluye simplificaciones.
 
-NOTE: dashed lines indicate optional components
+NOTA: las líneas discontinuas indican componentes opcionales
 
-.`bitcoind` overview
+.`bitcoind` descripción general
 [mermaid, target=bitcoind-overview, id=bitcoind-overview]
 ....
 flowchart LR
@@ -36,47 +36,47 @@ flowchart LR
     LevelDB --> BlockManager
 ....
 
-.Brief description of components in <<bitcoind-overview>>
+.Breve descripción de los componentes en <<bitcoind-overview>>
 [%autowidth]
 |===
-|Component |Simplified description
+|Componente |Descripción simplificada
 
 |`AddrMan`
-|Manage peers' network addresses
+|Gestiona las direcciones de red de los pares
 
 |`CConnman`
-|Manage network connections to peers
+|Gestiona las conexiones de red con los pares
 
 |`Interfaces::Chain`
-|Give clients access to chain state, fee rate estimates, notifications and allow tx submission
+|Proporciona a los clientes acceso al estado de la cadena, estimaciones de tarifas, notificaciones y permite la presentación de transacciones
 
 |`ChainstateManager`
-|An interface for interacting with 1 or 2 chainstates (1. IBD-verified, 2. optional snapshot)
+|Una interfaz para interactuar con 1 o 2 estados de la cadena (1. Verificado por IBD, 2. instantánea opcional)
 
 |`NetGroupManager`
-|Manage net groups. Ensure we don't connect to multiple nodes in the same ASN bucket
+|Gestiona los grupos de red. Asegura que no nos conectemos a múltiples nodos en el mismo grupo ASN
 
 |`CTxMemPool`
-|Validate and store (valid) transactions which may be included in the next block
+|Valida y almacena transacciones (válidas) que pueden incluirse en el próximo bloque
 
 |`PeerManager`
-|Manage peer state and interaction e.g. processing messages, fetching blocks & removing for misbehaviour
+|Gestiona el estado e interacción de los pares, por ejemplo, procesando mensajes, obteniendo bloques y eliminando por mal comportamiento
 
 |`BlockManager`
-|Maintains a tree of blocks on disk (via LevelDB) to determine most-work tip
+|Mantiene un árbol de bloques en disco (a través de LevelDB) para determinar la punta de mayor trabajo
 
 |`ScriptPubKeyMan`
-|Manages `scriptPubKeys` in a wallet. Can give out new `scriptPubKeys` as well as call into a `SigningProvider` to sign transactions
+|Gestiona `scriptPubKeys` en una billetera. Puede proporcionar nuevos `scriptPubKeys` así como llamar a un `SigningProvider` para firmar transacciones
 
 |===
 
-== `bitcoin-cli` overview
+== Descripción general de `bitcoin-cli`
 
-The following diagram gives a brief overview of the major components in bitcoin-cli.
+El siguiente diagrama ofrece una breve descripción de los componentes principales en bitcoin-cli.
 
-WARNING: This diagram is **not** exhaustive and includes simplifications.
+ADVERTENCIA: Este diagrama **no** es exhaustivo e incluye simplificaciones.
 
-.`bitcoin-cli` overview
+.`bitcoin-cli` descripción general
 [mermaid, target=bitcoin-cli-overview, id=bitcoin-cli-overview-chart]
 ....
 flowchart LR
@@ -96,15 +96,15 @@ flowchart LR
     ArgsManager --> bitcoin-cli
 ....
 
-== Wallet structure
+== Estructura de la billetera
 
-The following diagram gives a brief overview of how the wallet is structured.
+El siguiente diagrama ofrece una breve descripción de cómo está estructurada la billetera.
 
-WARNING: This diagram is **not** exhaustive and includes simplifications.
+ADVERTENCIA: Este diagrama **no** es exhaustivo e incluye simplificaciones.
 
-NOTE: dashed lines indicate optional components
+NOTA: las líneas discontinuas indican componentes opcionales
 
-.Wallet structure overview
+.Descripción general de la estructura de la billetera
 [mermaid, target=bitcoin-wallet-overview]
 ....
 flowchart LR
@@ -133,30 +133,31 @@ flowchart LR
     Keys --> ScriptPubKeyMan
 ....
 
-.Brief description of components
+.Breve descripción de los componentes
 [%autowidth]
 |===
-|Component |Simplified description
+|Componente |Descripción simplificada
 
 |`WalletDatabase`
-|Represents a single wallet. Handles reads and writes to disk
+|Representa una sola billetera. Maneja lecturas y escrituras en disco
 
 |`ScriptPubKeyMan`
-|Base class for the below SPKM classes to override before being used by `CWallet`
+|Clase base para las clases SPKM a continuación que se sobrescriben antes de ser utilizadas por `CWallet`
 
 |`DescriptorScriptPubKeyMan`
-|A SPKM for https://github.com/bitcoin/bitcoin/pull/16528[descriptor-based^] wallets
+|Un SPKM para billeteras basadas en descriptores
 
 |`LegacyScriptPubKeyMan`
-|A SPKM for legacy wallets
+|Un SPKM para billeteras heredadas
 
 |`SigningProvider`
-|An interface for a `KeyStore` to sign transactions from
+|Una interfaz para un `KeyStore` para firmar transacciones
 
 |`Interfaces::Chain`
-|Give clients access to chain state, fee rate estimates, notifications and allow tx submission
+|Proporciona a los clientes acceso al estado de la cadena, estimaciones de tarifas, notificaciones y permite la presentación de transacciones
 
 |`cs_wallet`
-|The primary wallet lock, held for atomic wallet operations
+|El bloqueo principal de la billetera, mantenido para operaciones atómicas de la billetera
+|===
 
 |===

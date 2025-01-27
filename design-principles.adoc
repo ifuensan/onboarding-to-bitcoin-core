@@ -1,19 +1,19 @@
-:page-title: General design principles
+:page-title: Principios generales de diseño
 :page-nav_order: 10
-:page-parent: Architecture
-== General design principles
+:page-parent: Arquitectura
+== Principios generales de diseño
 
-Over the last decade, as the scope, complexity and test coverage of the codebase has increased, there has been a general effort to not only break Bitcoin Core down from its monolithic structure but also to move towards it being a collection of self-contained subsystems.
-The rationale for such a goal is that this makes components easier to reason about, easier to test, and less-prone to layer violations, as subsystems can contain a full view of all the information they need to operate.
+Durante la última década, a medida que el alcance, la complejidad y la cobertura de pruebas del código han aumentado, ha habido un esfuerzo general no solo para descomponer Bitcoin Core de su estructura monolítica, sino también para convertirlo en una colección de subsistemas autónomos.
+La razón de este objetivo es que esto hace que los componentes sean más fáciles de razonar, más fáciles de probar y menos propensos a violaciones de capas, ya que los subsistemas pueden contener una vista completa de toda la información que necesitan para operar.
 
-Subsystems can be notified of events relevant to them and take appropriate actions on their own.
-On the GUI/QT side this is handled with signals and slots, but in the core daemon this is largely still a producer/consumer pattern.
+Los subsistemas pueden ser notificados de eventos relevantes para ellos y tomar las acciones apropiadas por su cuenta.
+En el lado de la GUI/QT, esto se maneja con señales y ranuras, pero en el demonio principal esto sigue siendo en gran medida un patrón de productor/consumidor.
 
-The various subsystems are often suffixed with `Manager` or `man`, e.g. `CConnman` or `ChainstateManager`.
+Los diversos subsistemas a menudo tienen el sufijo `Manager` o `man`, por ejemplo, `CConnman` o `ChainstateManager`.
 
-TIP: The extra "C" in `CConnman` is a hangover from the https://en.wikipedia.org/wiki/Hungarian_notation[Hungarian notation^] used originally by Satoshi.
-This is being phased out as-and-when affected code is touched during other changes.
+TIP: La "C" adicional en `CConnman` es un vestigio de la https://en.wikipedia.org/wiki/Hungarian_notation[notación húngara^] utilizada originalmente por Satoshi.
+Esto se está eliminando gradualmente a medida que el código afectado se modifica durante otros cambios.
 
-You can see some (but not all) of these subsystems being initialized in https://github.com/bitcoin/bitcoin/blob/v23.0/src/init.cpp#L1113[_init.cpp#AppInitMain()_^].
+Puedes ver algunos (pero no todos) de estos subsistemas siendo inicializados en https://github.com/bitcoin/bitcoin/blob/v23.0/src/init.cpp#L1113[_init.cpp#AppInitMain()_^].
 
-There is a recent preference to favour python over bash/sh for scripting, e.g. for linters, but many shell scripts remain in place for CI and contrib/ scripts.
+Hay una preferencia reciente por favorecer python sobre bash/sh para scripting, por ejemplo, para linters, pero muchos scripts de shell permanecen en su lugar para CI y scripts en contrib/.
