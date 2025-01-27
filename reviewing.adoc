@@ -1,6 +1,6 @@
 :page-title: Revisión de código
 :page-nav_order: 20
-:page-parent: Overview and Development Process
+:page-parent: Descripción general y proceso de desarrollo
 === Revisión de código
 
 Jon Atack proporciona una guía para revisar un PR de Bitcoin Core en su artículo https://jonatack.github.io/articles/how-to-review-pull-requests-in-bitcoin-core[How To Review Pull Requests in Bitcoin Core^].

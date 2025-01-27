@@ -1,6 +1,6 @@
 :page-title: Construyendo Bitcoin Core
 :page-nav_order: 70
-:page-parent: Overview and Development Process
+:page-parent: Descripción general y proceso de desarrollo
 === Compilación desde el código fuente
 
 Al compilar Bitcoin Core desde el código fuente, hay algunas instrucciones dependientes de la plataforma que se deben seguir.

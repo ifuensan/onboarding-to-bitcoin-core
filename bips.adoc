@@ -1,6 +1,6 @@
 :page-title: BIPs
 :page-nav_order: 180
-:page-parent: Overview and Development Process
+:page-parent: Descripción general y proceso de desarrollo
 [[bips]]
 == BIPs
 

@@ -1,6 +1,6 @@
 :page-title: Depurando Bitcoin Core
 :page-nav_order: 50
-:page-parent: Overview and Development Process
+:page-parent: Descripción general y proceso de desarrollo
 ==== Depuración de Bitcoin Core
 
 // Archivado en https://archive.is/hRExH

@@ -1,6 +1,6 @@
 :page-title: Canales de comunicación
 :page-nav_order: 120
-:page-parent: Overview and Development Process
+:page-parent: Descripción general y proceso de desarrollo
 === Canal #bitcoin-core-dev en IRC
 
 El proyecto Bitcoin Core tiene un canal de IRC `#bitcoin-core-dev` disponible en la red Libera.chat.

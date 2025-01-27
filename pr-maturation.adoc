@@ -1,6 +1,6 @@
 :page-title: Maduración de la PR
 :page-nav_order: 130
-:page-parent: Overview and Development Process
+:page-parent: Descripción general y proceso de desarrollo
 ==== ACK / NACK
 
 Si estás comunicándote en un Issue o PR, es posible que te encuentres con "ACK"s y "NACK"s (o incluso "approach (N)ACK" o similar).

@@ -1,6 +1,6 @@
 :page-title: Viajes del contribuidor
 :page-nav_order: 0
-:page-parent: Overview and Development Process
+:page-parent: Descripción general y proceso de desarrollo
 == Viajes del contribuidor
 
 Algunos colaboradores han documentado sus viajes al espacio, lo que nos permite conocer los enfoques que encontraron útiles, y también los obstáculos y las cosas que encontraron difíciles en el camino.

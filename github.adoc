@@ -1,6 +1,6 @@
 :page-title: Flujo de desarrollo
 :page-nav_order: 10
-:page-parent: Overview and Development Process
+:page-parent: Descripción general y proceso de desarrollo
 == Flujo de desarrollo
 
 Bitcoin Core utiliza un flujo de trabajo basado en GitHub para el desarrollo.

@@ -1,6 +1,6 @@
 :page-title: Compilaciones reproducibles
 :page-nav_order: 150
-:page-parent: Overview and Development Process
+:page-parent: Descripción general y proceso de desarrollo
 == Compilaciones reproducibles con Guix
 
 Bitcoin Core utiliza el gestor de paquetes https://guix.gnu.org/[Guix^] para lograr compilaciones reproducibles.

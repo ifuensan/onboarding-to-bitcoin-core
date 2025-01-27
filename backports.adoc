@@ -1,6 +1,6 @@
 :page-title: Backports
 :page-nav_order: 140
-:page-parent: Overview and Development Process
+:page-parent: Descripción general y proceso de desarrollo
 === Backports o Retroportaciones
 
 Bitcoin Core a menudo retrotrae correcciones de errores y activaciones de soft fork a versiones anteriores del software.

@@ -1,6 +1,6 @@
 :page-title: Roles del proyecto
 :page-nav_order: 160
-:page-parent: Overview and Development Process
+:page-parent: Descripción general y proceso de desarrollo
 == Organización y roles
 
 El objetivo de la Organización de Bitcoin Core es representar una entidad que esté descentralizada tanto como sea prácticamente posible en una plataforma centralizada.

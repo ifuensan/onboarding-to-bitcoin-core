@@ -1,6 +1,6 @@
 :page-title: Estadísticas del proyecto
 :page-nav_order: 190
-:page-parent: Overview and Development Process
+:page-parent: Descripción general y proceso de desarrollo
 == Estadísticas del proyecto
 
 .Bitcoin Core @ v24.0.1

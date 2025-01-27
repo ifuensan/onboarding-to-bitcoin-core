@@ -1,6 +1,6 @@
 :page-title: Contribución de código
 :page-nav_order: 30
-:page-parent: Overview and Development Process
+:page-parent: Descripción general y proceso de desarrollo
 === Contribución de código
 
 Esta sección detalla algunos de los procesos relacionados con las contribuciones de código al proyecto Bitcoin Core, junto con algunos escollos comunes y consejos para tratar de evitarlos.

@@ -1,6 +1,6 @@
 :page-title: Documentación del código
 :page-nav_order: 80
-:page-parent: Overview and Development Process
+:page-parent: Descripción general y proceso de desarrollo
 === Documentación del código
 
 Bitcoin Core utiliza https://www.doxygen.nl/index.html[Doxygen^] para generar documentación de desarrolladores automáticamente a partir de su código C++ anotado.

@@ -1,6 +1,6 @@
 :page-title: Probando tus contribuciones
 :page-nav_order: 40
-:page-parent: Overview and Development Process
+:page-parent: Descripción general y proceso de desarrollo
 
 ==== Integración continua
 

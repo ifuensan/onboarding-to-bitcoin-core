@@ -1,6 +1,6 @@
 :page-title: Uso de una red de prueba
 :page-nav_order: 90
-:page-parent: Overview and Development Process
+:page-parent: Descripción general y proceso de desarrollo
 === Pruebas
 
 Tres tipos de redes de prueba están disponibles:

@@ -1,6 +1,6 @@
 :page-title: Pruebas manuales de un test funcional
 :page-nav_order: 100
-:page-parent: Overview and Development Process
+:page-parent: Descripción general y proceso de desarrollo
 ==== Pruebas manuales mientras se ejecuta un test funcional
 
 Ejecutar regtest como se describe permite comenzar desde cero con una cadena vacía, una billetera vacía y sin estado existente.

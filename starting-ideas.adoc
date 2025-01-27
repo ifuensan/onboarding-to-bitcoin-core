@@ -1,6 +1,6 @@
 :page-title: Comenzando con el desarrollo
 :page-nav_order: 110
-:page-parent: Overview and Development Process
+:page-parent: Descripción general y proceso de desarrollo
 === Comenzando con el desarrollo
 
 Uno de los roles más demandados del proyecto es el de revisión de código, ¡y de hecho, esta es también una de las mejores maneras de familiarizarse con la base de código!

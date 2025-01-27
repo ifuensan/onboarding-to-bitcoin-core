@@ -1,6 +1,6 @@
 :page-title: Investigación de cambios pasados
 :page-nav_order: 60
-:page-parent: Overview and Development Process
+:page-parent: Descripción general y proceso de desarrollo
 === Arqueología del código
 
 Cuando se considera cambiar el código, puede ser útil tratar de entender primero la razón detrás de por qué se implementó de esa manera originalmente.
