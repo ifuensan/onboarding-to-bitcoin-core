@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ## If you update the version here, also update it in .travis.yml, .ruby-version,
 ## and README.md. Then push your branch and make sure Travis supports that
 ## version.
-ruby '3.3.4'
+ruby '3.2.2'
 
 gem "asciidoctor", "~>2.0.20"
 gem "rouge"
