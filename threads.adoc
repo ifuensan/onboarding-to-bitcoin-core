@@ -1,95 +1,95 @@
-:page-title: Threads
+:page-title: Hilos
 :page-nav_order: 40
-:page-parent: Architecture
-== Threads
+:page-parent: Arquitectura
+== Hilos
 
-The `main()` function starts the main bitcoind process thread, usefully named `bitcoind`.
-All subsequent threads are currently started as children of the `bitcoind` thread, although this is not an explicit design requirement.
+La función `main()` inicia el proceso principal del hilo `bitcoind`, llamado `bitcoind`.
+Todos los hilos subsiguientes se inician actualmente como hijos del hilo `bitcoind`, aunque esto no es un requisito de diseño explícito.
 
-The Bitcoin Core Developer https://github.com/bitcoin/bitcoin/blob/master/doc/developer-notes.md#threads=[docs^] contains a section on threads, which is summarised below in two tables, one for net threads, and one for other threads.
+El Desarrollador de Bitcoin Core https://github.com/bitcoin/bitcoin/blob/master/doc/developer-notes.md#threads=[docs^] contiene una sección sobre hilos, que se resume a continuación en dos tablas, una para hilos no relacionados con la red y otra para hilos relacionados con la red.
 
-.Non-net threads
+.Hilos no relacionados con la red
 [%autowidth]
 |===
-|Name |Function |Description
+|Nombre |Función |Descripción
 
 |`bitcoind`
 |`main()`
-|Responsible for starting up and shutting down the application, and spawning all sub-threads
+|Responsable de iniciar y cerrar la aplicación, y de generar todos los sub-hilos
 
 |`b-loadblk`
 |`ThreadImport`
-|Loads blocks from `blk*.dat` files or `-loadblock=<file>` on startup
+|Carga bloques desde archivos `blk*.dat` o `-loadblock=<archivo>` al iniciar
 
 |`b-scriptch.x`
 |`ThreadScriptCheck`
-|Parallel script validation threads for transactions in blocks
+|Hilos de validación de scripts en paralelo para transacciones en bloques
 
 |`b-http`
 |`ThreadHTTP`
-|Libevent thread to listen for RPC and REST connections
+|Hilo Libevent para escuchar conexiones RPC y REST
 
 |`b-httpworker.x`
 |`StartHTTPServer`
-|HTTP worker threads. Threads to service RPC and REST requests
+|Hilos de trabajo HTTP. Hilos para atender solicitudes RPC y REST
 
 |`b-txindex.x`
 |`ThreadSync`
-|Indexer threads. One thread per indexer
+|Hilos de indexación. Un hilo por indexador
 
 |`b-scheduler`
 |`SchedulerThread`
-|Does asynchronous background tasks like dumping wallet contents, dumping `addrman` and running asynchronous `validationinterface` callbacks
+|Realiza tareas asincrónicas en segundo plano, como volcar el contenido de la billetera, volcar `addrman` y ejecutar callbacks asincrónicos de `validationinterface`
 
 |`b-torcontrol`
 |`TorControlThread`
-|Libevent thread for tor connections
+|Hilo Libevent para conexiones tor
 
 |===
 
 [[net_threads]]
-=== Net threads
+=== Hilos relacionados con la red
 
-.Net threads
+.Hilos relacionados con la red
 [%autowidth]
 |===
-|Name |Function |Description
+|Nombre |Función |Descripción
 
 |`b-msghand`
 |`ThreadMessageHandler`
-|Application level message handling (sending and receiving). Almost all `net_processing` and validation logic runs on this thread
+|Manejo de mensajes a nivel de aplicación (envío y recepción). Casi toda la lógica de `net_processing` y validación se ejecuta en este hilo
 
 |`b-dnsseed`
 |`ThreadDNSAddressSeed`
-|Loads addresses of peers from the `ThreadDNS`
+|Carga direcciones de pares desde el `ThreadDNS`
 
 |`b-upnp`
 |`ThreadMapPort`
-|Universal plug-and-play startup/shutdown
+|Inicio/cierre universal plug-and-play
 
 |`b-net`
 |`ThreadSocketHandler`
-|Sends/Receives data from peers on port 8333
+|Envía/Recibe datos de pares en el puerto 8333
 
 |`b-addcon`
 |`ThreadOpenAddedConnections`
-|Opens network connections to added nodes
+|Abre conexiones de red a nodos añadidos
 
 |`b-opencon`
 |`ThreadOpenConnections`
-|Initiates new connections to peers
+|Inicia nuevas conexiones con pares
 
 |`b-i2paccept`
 |`ThreadI2PAcceptIncoming`
-|Listens for and accepts incoming I2P connections through the I2P SAM proxy
+|Escucha y acepta conexiones entrantes de I2P a través del proxy I2P SAM
 
 |===
 
-=== Thread debugging
+=== Depuración de hilos
 
-In order to debug a multi-threaded application like bitcoind using gdb you will need to enable following child processes.
-Below is shown the contents of a file `threads.brk` which can be sourced into gdb using `source threads.brk`, before you start debugging bitcoind.
-The file also loads break points where new threads are spawned.
+Para depurar una aplicación multi-hilo como bitcoind usando gdb, necesitarás habilitar el seguimiento de procesos secundarios.
+A continuación se muestra el contenido de un archivo `threads.brk` que puede ser cargado en gdb usando `source threads.brk`, antes de comenzar a depurar bitcoind.
+El archivo también carga puntos de interrupción donde se generan nuevos hilos.
 
 .threads.brk
 [source,bash]
@@ -110,4 +110,3 @@ break ThreadOpenAddedConnections
 break ThreadOpenConnections
 break ThreadI2PAcceptIncoming
 ----
-
