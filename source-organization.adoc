@@ -1,23 +1,24 @@
-:page-title: Source code organization
+:page-title: Organización del código fuente
 :page-nav_order: 60
-:page-parent: Architecture
-== Source code organization
+:page-parent: Arquitectura
 
-Issue https://github.com/bitcoin/bitcoin/issues/15732[#15732^] describes how the Bitcoin Core project is striving to organize libraries and their associated source code, copied below for convenience:
+== Organización del código fuente
 
-> Here is how I am thinking about the organization:
-> 
->     * `libbitcoin_server.a`, `libbitcoin_wallet.a`, and `libbitcoinqt.a` should all be terminal dependencies. They should be able to depend on other symbols in other libraries, but no other libraries should depend on symbols in them (and they shouldn't depend on each other).
-> 
->     * `libbitcoin_consensus.a` should be a standalone library that doesn't depend on symbols in other libraries mentioned here
-> 
->     * `libbitcoin_common.a` and `libbitcoin_util.a` seem very interchangeable right now and mutually depend on each other. I think we should either merge them into one library, or create a new top-level `src/common/` directory complementing `src/util/`, and start to distinguish general purpose utility code (like argument parsing) from bitcoin-specific utility code (like formatting bip32 paths and using ChainParams). Both these libraries can be depended on by `libbitcoin_server.a`, `libbitcoin_wallet.a`, and `libbitcoinqt.a`, and they can depend on `libbitcoin_consensus.a`. If we want to split util and common up, as opposed to merging them together, then util shouldn't depend on libconsensus, but common should.
-> 
-> 
-> Over time, I think it'd be nice if source code organization reflected library organization . I think it'd be nice if all `libbitcoin_util` source files lived in `src/util`, all `libbitcoin_consensus.a` source files lived in `src/consensus`, and all `libbitcoin_server.a` code lived in `src/node` (and maybe the library was called `libbitcoin_node.a`).
+El Issue https://github.com/bitcoin/bitcoin/issues/15732[#15732^] describe cómo el proyecto Bitcoin Core está tratando de organizar las bibliotecas y su código fuente asociado, copiado a continuación para mayor conveniencia:
 
-You can track the progress of these changes by following links from the issue to associated PRs.
+> Aquí está cómo estoy pensando en la organización:
+> 
+>     * `libbitcoin_server.a`, `libbitcoin_wallet.a` y `libbitcoinqt.a` deberían ser todas dependencias terminales. Deberían poder depender de otros símbolos en otras bibliotecas, pero ninguna otra biblioteca [...]
+> 
+>     * `libbitcoin_consensus.a` debería ser una biblioteca independiente que no dependa de símbolos en otras bibliotecas mencionadas aquí.
+> 
+>     * `libbitcoin_common.a` y `libbitcoin_util.a` parecen ser muy intercambiables en este momento y dependen mutuamente entre sí. Creo que deberíamos fusionarlas en una sola biblioteca, o crear un nuevo nivel superior [...]
+> 
+> 
+> Con el tiempo, creo que sería bueno si la organización del código fuente reflejara la organización de las bibliotecas. Creo que sería bueno si todos los archivos fuente de `libbitcoin_util` vivieran en `src/util`, todos los archivos fuente de `libbitcoin_consensus[...]
 
-The `libbitcoin-kernel` https://github.com/bitcoin/bitcoin/issues/24303[project^] will provide further clean-ups and improvements in this area.
+Puedes seguir el progreso de estos cambios siguiendo los enlaces desde el issue a los PRs asociados.
 
-If you want to explore for yourself which sources certain libraries require on the current codebase, you can open the file `src/Makefile.am` and search for `_SOURCES`.
+El https://github.com/bitcoin/bitcoin/issues/24303[proyecto^] `libbitcoin-kernel` proporcionará más limpiezas y mejoras en esta área.
+
+Si deseas explorar por ti mismo qué fuentes requieren ciertas bibliotecas en la base de código actual, puedes abrir el archivo `src/Makefile.am` y buscar `_SOURCES`.
