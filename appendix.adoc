@@ -6,7 +6,7 @@
 
 :pimpl_addrman_review: https://bitcoincore.reviews/22950
  
-El código base Bitcoin Core contiene muchas clases del formulario `class *Impl`.
+El código base de Bitcoin Core contiene muchas clases del formulario `class *Impl`.
 Estas clases están aprovechando el Puntero a la Implementación https://en.cppreference.com/w/cpp/language/pimpligh[técnica^] que ayuda a proporcionar ABIs más estables y también a reducir las dependencias de tiempo de compilación.
 
 .Algunas de las clases actuales PIMPL de Bitcoin Core
