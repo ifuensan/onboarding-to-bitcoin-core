@@ -1,24 +1,24 @@
 :page-nav_order: 20
 :page-has_children: true
 include::links-onepage.adoc[]
-= Consensus and Validation
+= Consenso y Validación
 
-TIP: This section has been updated to Bitcoin Core @ https://github.com/bitcoin/bitcoin/tree/v23.0[v23.0^]
+TIP: Esta sección ha sido actualizada a Bitcoin Core @ https://github.com/bitcoin/bitcoin/tree/v23.0[v23.0^]
 
-One of the fundamental concepts underlying bitcoin is that nodes on the network are able to maintain decentralized consensus on the ordering of transactions in the system.
+Uno de los conceptos fundamentales subyacentes al bitcoin es que los nodos en la red son capaces de mantener un consenso descentralizado sobre el orden de las transacciones en el sistema.
 
-The primary mechanism at work is that all nodes validate every block, and every transaction contained within that block, against their own copy of the consensus rules.
-The secondary mechanism is that in the event of a discrepancy between two competing chain tips nodes should follow the chain with the most cumulative proof-of-work.
-The result is that all honest nodes in the network will eventually converge onto a single, canonical, valid chain.
+El mecanismo principal en funcionamiento es que todos los nodos validan cada bloque, y cada transacción contenida en ese bloque, contra su propia copia de las reglas de consenso.
+El mecanismo secundario es que en caso de discrepancia entre dos cadenas competidoras, los nodos deben seguir la cadena con la mayor prueba de trabajo acumulada.
+El resultado es que todos los nodos honestos en la red eventualmente convergerán en una única cadena válida y canónica.
 
-WARNING: If all nodes do not compute consensus values identically (including edge cases) a chainsplit will result.
+ADVERTENCIA: Si todos los nodos no calculan los valores de consenso de manera idéntica (incluyendo casos extremos) se producirá una división de cadenas.
 
-For more information on how the bitcoin networks' decentralized consensus mechanism works see the Mastering Bitcoin section on https://github.com/bitcoinbook/bitcoinbook/tree/develop/ch10.asciidoc#decentralized-consensus[decentralized consensus^].
+Para obtener más información sobre cómo funciona el mecanismo de consenso descentralizado de las redes de bitcoin, consulte la sección de Mastering Bitcoin en https://github.com/bitcoinbook/bitcoinbook/tree/develop/ch10.asciidoc#decentralized-consensus[consenso descentralizado^].
 
-TIP: In Bitcoin Core there are an extra level of validation checks applied to incoming transactions in addition to consensus checks called "policy" which have a slightly different purpose, see xref:consensus-v-policy.adoc#consensus_vs_policy[consensus vs policy] for more information on the differences between the two.
+TIP: En Bitcoin Core hay un nivel adicional de verificaciones de validación aplicadas a las transacciones entrantes además de las verificaciones de consenso llamadas "política", que tienen un propósito ligeramente diferente, consulte xref:consensus-v-policy.adoc#consensus_vs_policy[consenso vs política] para obtener más información sobre las diferencias entre ambos.
 
-Consensus::
-A collection of functions and variables which **must** be computed identically to all https://bitnodes.io/nodes/[other^] nodes on the network in order to remain in consensus and therefore on the main chain.
+Consenso::
+Una colección de funciones y variables que **deben** ser calculadas de manera idéntica por todos los https://bitnodes.io/nodes/[otros^] nodos en la red para permanecer en consenso y, por lo tanto, en la cadena principal.
 
-Validation::
-Validation of blocks, transactions and scripts, with a view to permitting them to be added to either the blockchain (must pass consensus checks) or our local mempool (must pass policy checks).
+Validación::
+Validación de bloques, transacciones y scripts, con el fin de permitir que se añadan a la blockchain (deben pasar las verificaciones de consenso) o a nuestro mempool local (deben pasar las verificaciones de política).
