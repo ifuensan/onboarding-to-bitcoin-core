@@ -20,4 +20,4 @@ Consulte el completo https://github.com/bitcoin/bitcoin/blob/master/doc/develope
 == Separación de implementación
 
 Muchas de las clases encontradas en toda la base de código utilizan la técnica PIMPL para separar su implementación de la representación externa.
-Consulte xref:apendix.adoc#Pimpl-Technique[técnica PIMPL] en el Apéndice para obtener más información.
+Consulte xref:appendix.adoc#Técnica-Pimpl[técnica PIMPL] en el Apéndice para obtener más información.
