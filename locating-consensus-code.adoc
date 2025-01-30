@@ -1,12 +1,12 @@
-:page-title: Locating consensus code
+:page-title: Localización del código de consenso
 :page-nav_order: 0
-:page-parent: Consensus and Validation
+:page-parent: Consenso and Validación
 include::links-onepage.adoc[]
 [[consensus_in_bitcoin_core]]
-== Consensus in Bitcoin Core
+== Consenso en Bitcoin Core
 
-Naturally one might assume that all code related to consensus could be found in the _src/consensus/_ directory, however this is not entirely the case.
-Components of consensus-related code can be found across the Bitcoin Core codebase in a number of files, including but not limited to:
+Naturalmente, se podría suponer que todo el código relacionado con el consenso se podría encontrar en el directorio _src/consensus/_, sin embargo, este no es del todo el caso.
+Los componentes del código relacionado con el consenso se pueden encontrar en la base de código de bitcoin nore en varios archivos, incluidos, entre otros:
 
 [#consensus-components,listing]
 ----
@@ -19,12 +19,12 @@ Components of consensus-related code can be found across the Bitcoin Core codeba
     📄 validation.cpp
 ----
 
-Consensus-critical functions can also be found in proximity to code which could affect whether a node considers a transaction or block valid.
-This could extend to, for example, block storage xref:consensus-bugs.adoc#database_consensus[database] code.
+Las funciones críticas de consenso también se pueden encontrar cerca del código que podría afectar si un nodo considera una transacción o bloqueo válido.
+Esto podría extenderse, por ejemplo, el almacenamiento de bloques XREF: consensus-bugs.Adoc#database_consensus [base de datos].
 
-An abbreviated list of some of the more notable consensus functions and variables is shown below.
+A continuación se muestra una lista abreviada de algunas de las funciones y variables de consenso más notables.
 
-.Some consensus functions and variables
+.Algunas funciones y variables de consenso
 [cols="2,4"]
 |===
 |File |Objects
