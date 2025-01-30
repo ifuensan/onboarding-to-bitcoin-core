@@ -3,9 +3,9 @@
 :page-parent: Arqueitectura
 == Análisis técnico detallado
 
-lsilva01 ha escrito un análisis técnico detallado de la arquitectura de Bitcoin Core como parte de la Documentación de Onboarding de Bitcoin Core en 1.0_bitcoin_core_architecture.asciidoc[Bitcoin Architecture].
+lsilva01 ha escrito un análisis técnico detallado de la arquitectura de Bitcoin Core como parte de la Documentación de Onboarding de Bitcoin Core en <<1.0_bitcoin_core_architecture.asciidoc[Bitcoin Architecture]>>.
 
-Una vez que hayas obtenido una visión general de la arquitectura del programa, puedes aprender más detalles sobre qué archivos de código implementan qué funcionalidades desde 1.1_regions.asciidoc[Bitcoin Core regions].
+Una vez que hayas obtenido una visión general de la arquitectura del programa, puedes aprender más detalles sobre qué archivos de código implementan qué funcionalidades desde <<1.1_regions.asciidoc[Bitcoin Core regions]>>.
 
 James O'Beirne ha grabado 3 videos que detallan cómo está estructurado el código, cómo funciona el sistema de construcción, qué herramientas para desarrolladores existen, así como cuál es la función principal de muchas partes del código. 
 
