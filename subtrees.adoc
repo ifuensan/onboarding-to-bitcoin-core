@@ -1,22 +1,23 @@
-:page-title: Subtrees and PIMPL
+:page-title: Subárboles y PIMPL
 :page-nav_order: 90
-:page-parent: Architecture
+:page-parent: Arquitectura
 include::links-onepage.adoc[]
 [[subtrees]]
-== Subtrees
+== Subárboles
 
-Several parts of the repository (LevelDB, crc32c, secp256k1 etc.) are subtrees of software maintained elsewhere.
+Varias partes del repositorio (LevelDB, CRC32C, SECP256K1, etc.) son subárboles de software mantenidos en otros lugares.
 
-Some of these are maintained by active developers of Bitcoin Core, in which case changes should go directly upstream without being PRed directly against the project.
-They will be merged back in the next subtree merge.
+Algunos de estos son mantenidos por desarrolladores activos de Bitcoin Core, en cuyo caso los cambios deben ir directamente aguas arriba sin ser predominantes directamente contra el proyecto.
+Se fusionarán en la próxima fusión de subárbol.
 
-Others are external projects without a tight relationship with our project.
+Otros son proyectos externos sin una relación estrecha con nuestro proyecto.
 
-There is a tool in `test/lint/git-subtree-check.sh` to check a subtree directory for consistency with its upstream repository.
+Hay una herramienta en `test/lint/git-subtree-check.sh` para verificar un directorio de subárbol en busca de consistencia con su repositorio ascendente.
 
-See the full https://github.com/bitcoin/bitcoin/blob/master/doc/developer-notes.md#subtrees[subtrees^] documentation for more information.
+Consulte el completo https://github.com/bitcoin/bitcoin/blob/master/doc/developer-notes.md#subtrees[subtrees
+] documentación para obtener más información.
 
-== Implementation separation
+== Separación de implementación
 
-Many of the classes found throughout the codebase use the PIMPL technique to separate their implementation from the external representation.
-See xref:appendix.adoc#pimpl-technique[PIMPL technique] in the Appendix for more information.
+Muchas de las clases encontradas en toda la base de código utilizan la técnica PIMPL para separar su implementación de la representación externa.
+Consulte xref:apendix.adoc#Pimpl-Technique[técnica PIMPL] en el Apéndice para obtener más información.
