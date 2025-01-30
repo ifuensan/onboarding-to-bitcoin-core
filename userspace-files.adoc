@@ -1,76 +1,76 @@
-:page-title: Userspace files
+:page-title: Archivos en el espacio de usuario
 :page-nav_order: 70
-:page-parent: Architecture
-== Userspace files
+:page-parent: Arquitectura
+== Archivos en el espacio de usuario
 
-Bitcoin Core stores a number of files in its data directory ($DATADIR) at runtime.
+Bitcoin Core almacena una serie de archivos en su directorio de datos ($DATADIR) en tiempo de ejecución.
 
-=== Block and undo files
+=== Archivos de bloque y deshacer
 
 $DATADIR/blocks/blk*.dat::
-Stores raw network-format block data in order received.
+Almacena datos de bloques en formato de red en el orden recibido.
 
 $DATADIR/blocks/rev*.dat::
-Stores block "undo" data in order processed.
+Almacena datos de "deshacer" de bloques en el orden procesado.
 +
 [quote,Pieter Wuille,'https://bitcoin.stackexchange.com/questions/11104/what-is-the-database-for?rq=1[stackexchange]']
 ____
-You can see blocks as 'patches' to the chain state (they consume some unspent outputs, and produce new ones), and see the undo data as reverse patches. They are necessary for rolling back the chainstate, which is necessary in case of reorganisations.
+Puedes ver los bloques como 'parches' al estado de la cadena (consumen algunas salidas no gastadas y producen nuevas), y ver los datos de deshacer como parches inversos. Son necesarios para revertir la cadena[...]
 ____
 
 ////
 TODO: bitcoin.conf, config.json, debug.log ??
 ////
 
-=== Indexes
+=== Índices
 
-With data from the raw block* and rev* files, various LevelDB indexes can be built.
-These indexes enable fast lookup of data without having to rescan the entire block chain on disk.
+Con los datos de los archivos raw block* y rev*, se pueden construir varios índices LevelDB.
+Estos índices permiten una búsqueda rápida de datos sin tener que volver a escanear toda la cadena de bloques en el disco.
 
-Some of these databases are mandatory and some of them are optional and can be enabled using run-time configuration flags.
+Algunas de estas bases de datos son obligatorias y otras son opcionales y se pueden habilitar utilizando flags de configuración en tiempo de ejecución.
 
-Block Index::
-Filesystem location of blocks + some metadata
+Índice de Bloques::
+Ubicación del sistema de archivos de los bloques + algunos metadatos
 
-Chainstate Index::
-All current UTXOs + some metadata
+Índice de Estado de la Cadena::
+Todos los UTXOs actuales + algunos metadatos
 
-Tx Index::
-Filesystem location of all transactions by txid
+Índice de Tx::
+Ubicación del sistema de archivos de todas las transacciones por txid
 
-Block Filter Index::
-https://github.com/bitcoin/bips/blob/master/bip-0157.mediawiki[BIP157] filters, hashes and headers
+Índice de Filtro de Bloques::
+Filtros, hashes y cabeceras de [BIP157](https://github.com/bitcoin/bips/blob/master/bip-0157.mediawiki)
 
-Coinstats Index::
-UTXO set https://github.com/bitcoin/bitcoin/blob/b3f866a8dfd652b6339b79124843e58bd0bf3013/src/index/coinstatsindex.h#L26-L37[statistics]
+Índice de Estadísticas de Monedas::
+Estadísticas del conjunto UTXO [statistics](https://github.com/bitcoin/bitcoin/blob/b3f866a8dfd652b6339b79124843e58bd0bf3013/src/index/coinstatsindex.h#L26-L37)
 
 [%autowidth]
 |===
-|Name |Location |Optional |Class
+|Nombre |Ubicación |Opcional |Clase
 
-|Block Index
+|Índice de Bloques
 |_$DATADIR/blocks/index_
 |No
 |`BlockIndex`
 
-|Chainstate Index
+|Índice de Estado de la Cadena
 |_$DATADIR/chainstate_
 |No
 |`Chainstate`
 
-|Tx Index
+|Índice de Tx
 |_$DATADIR/indexes/txindex_
-|Yes
+|Sí
 |`TxIndex`
 
-|Block Filter Index
+|Índice de Filtro de Bloques
 |_$DATADIR/indexes/blockfilter/<filter name>_
-|Yes
+|Sí
 |`BlockFilterIndex`
 
-|Coinstats Index
+|Índice de Estadísticas de Monedas
 |_$DATADIR/indexes/coinstats_
-|Yes
+|Sí
 |`CoinstatsIndex`
 
 |===
