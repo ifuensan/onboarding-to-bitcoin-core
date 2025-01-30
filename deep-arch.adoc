@@ -1,17 +1,16 @@
-:page-title: Deep technical dive
+:page-title: Análisis técnico detallado
 :page-nav_order: 80
-:page-parent: Architecture
-== Deep technical dive
+:page-parent: Arqueitectura
+== Análisis técnico detallado
 
-lsilva01 has written a deep technical dive into the architecture of Bitcoin Core as part of the Bitcoin Core Onboarding Documentation in https://github.com/chaincodelabs/bitcoin-core-onboarding/blob/main/1.0_bitcoin_core_architecture.asciidoc[Bitcoin Architecture^].
+lsilva01 ha escrito un análisis técnico detallado de la arquitectura de Bitcoin Core como parte de la Documentación de Onboarding de Bitcoin Core en 1.0_bitcoin_core_architecture.asciidoc[Bitcoin Architecture].
 
-Once you've gained some insight into the architecture of the program itself you can learn further details about which code files implement which functionality from the https://github.com/chaincodelabs/bitcoin-core-onboarding/blob/main/1.1_regions.asciidoc[Bitcoin Core regions^] document.
+Una vez que hayas obtenido una visión general de la arquitectura del programa, puedes aprender más detalles sobre qué archivos de código implementan qué funcionalidades desde 1.1_regions.asciidoc[Bitcoin Core regions].
 
-James O'Beirne has recorded 3 videos which go into detail on how the codebase is laid out, how the build system works, what developer tools there are, as well as what the primary function of many of the files in the codebase are:
+James O'Beirne ha grabado 3 videos que detallan cómo está estructurado el código, cómo funciona el sistema de construcción, qué herramientas para desarrolladores existen, así como cuál es la función principal de muchas partes del código. 
 
-. https://www.youtube.com/watch?v=J1Ru8V36z_Y[Architectural tour of Bitcoin Core (part 1 of 3)^]
-. https://www.youtube.com/watch?v=RVWcUnpZX4E[Architectural tour of Bitcoin Core (part 2 of 3)^]
-. https://www.youtube.com/watch?v=UiD5DZU9Zp4[Architectural tour of Bitcoin Core (part 3 of 3)^]
+. https://www.youtube.com/watch?v=J1Ru8V36z_Y[Recorrido arquitectónico de Bitcoin Core (parte 1 de 3)^]
+. https://www.youtube.com/watch?v=RVWcUnpZX4E[Recorrido arquitectónico de Bitcoin Core (parte 2 de 3)^]
+. https://www.youtube.com/watch?v=UiD5DZU9Zp4[Recorrido arquitectónico de Bitcoin Core (parte 3 de 3)^]
 
-ryanofsky has written a handy https://github.com/ryanofsky/bitcoin/blob/pr/libs/doc/design/libraries.md[guide^] covering the different libraries contained within Bitcoin Core, along with some of their conventions and a dependency graph for them.
-Generally speaking, the desire is for the Bitcoin Core project to become more modular and less monolithic over time.
+ryanofsky ha escrito una práctica https://github.com/ryanofsky/bitcoin/blob/pr/libs/doc/design/libraries.md[guía^] que cubre las diferentes bibliotecas contenidas dentro de Bitcoin Core, junto con algunas de sus convenciones y un gráfico de dependencia para ellos. En términos generales, el deseo es que el proyecto Bitcoin Core se vuelva más modular y menos monolítico con el tiempo.
