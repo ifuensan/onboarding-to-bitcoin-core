@@ -2,14 +2,14 @@
 :page-nav_order: 100
 
 [id=pimpl-technique]
-== PIMPL technique
+== Técnica PIMPL
 
 :pimpl_addrman_review: https://bitcoincore.reviews/22950
+ 
+El código base Bitcoin Core contiene muchas clases del formulario `class *Impl`.
+Estas clases están aprovechando el Puntero a la Implementación https://en.cppreference.com/w/cpp/language/pimplightechnique^] que ayuda a proporcionar ABIs más estables y también a reducir las dependencias de tiempo de compilación.
 
-The Bitcoin Core codebase contains many classes of the form `class *Impl`.
-These classes are taking advantage of the Pointer to Implementation https://en.cppreference.com/w/cpp/language/pimpl[technique^] which helps to both provide more stable ABIs and also to reduce compile-time dependencies.
-
-.Some of the current Bitcoin Core PIMPL classes
+.Algunas de las clases actuales PIMPL de Bitcoin Core
 [source,cpp]
 ----
 AddrManImpl
@@ -30,8 +30,8 @@ SketchImpl
 DescriptorImpl
 ----
 
-Amiti Uttarwar {pimpl_addrman_review}[hosted^] a PR review club "Pimpl AddrMan to abstract implementation details" which contains information on the design aims, advantages and disadvantages.
-Below are copies of the annotated pictures she created and included to assist learning.
+Amiti Uttarwar {pimpl_addrman_review}[hostea^] un club de revisión de PR "Pimpl AddrMan to abstract implementation details" en español "PIMPL Addrman a detalles de implementación abstracta" que contiene información sobre los objetivos de diseño, ventajas y desventajas.
+A continuación se presentan copias de las imágenes anotadas que creó e incluyó para ayudar al aprendizaje.
 
 .PIMPL peerman
 [link=https://bitcoincore.reviews/22950]
