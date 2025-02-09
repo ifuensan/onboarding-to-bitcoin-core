@@ -7,11 +7,12 @@ ruby '3.2.2'
 
 gem "asciidoctor", "~>2.0.20"
 gem "rouge"
+gem "just-the-docs"
 
 ## If you add a new Gem below, run `bundle install` to install it.
 group :development do
   gem "jekyll", "~> 4.3.2"
-  gem "just-the-docs"
+  #gem "just-the-docs"
   gem 'jekyll-redirect-from'
   # Lock `http_parser.rb` gem to `v0.6.x` on JRuby builds since newer versions of the gem
   # do not have a Java counterpart.
